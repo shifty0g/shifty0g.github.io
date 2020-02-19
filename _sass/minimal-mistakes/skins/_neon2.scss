@@ -21,12 +21,16 @@ $header-background-color: mix($primary-color, #000, 10%) !default;
 
 
 /* header - masthead */
-.masthead {
-	background: $header-background-color;
+.masthead {background: $header-background-color;}
+.greedy-nav {background: $header-background-color;}
+
+.author__avatar img {
+    max-width: 200px;
+    border-radius: 50%;
 }
-.greedy-nav {
-	background: $header-background-color;
-}
+
+
+
 
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons .svg-inline--fa {
