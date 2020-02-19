@@ -23,7 +23,7 @@ description              : "Pentesting and stuff"
 url                      : https://shifty0g.ninja # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "shifty0g/shifty0g.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-logo                     : #"/assets/images/masthead.png"
+logo                     : "/assets/images/logo.png"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
