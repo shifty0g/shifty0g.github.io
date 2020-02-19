@@ -1,10 +1,32 @@
 ---
-title: "Quaoar"
-date: 2017-04-02 12:52:16 +0000
-comments: true
-categories: challenges
-tags: challenges
+layout: single
+title: Quaoar - Vulnhub
+excerpt: A nice and simple box abusing wordpress
+date: 2017-04-02
+classes: wide
+header:
+  teaser: /assets/images/vulnhub-writeup-quaoar/quaoar_header.png
+  teaser_home_page: true
+  icon: /assets/images/vulnhub.webp
+categories:
+  - vulnhub
+  - infosec
+  - writeup
+  - challenges
+tags:  
+  - wordpress
+  - ctf
+  - webshells
+  - php
+  - easy
+published: true
 ---
+
+![](/assets/images/vulnhub-writeup-quaoar/quaoar_header.png)
+
+
+
+
 
 ![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/header.png)
 
