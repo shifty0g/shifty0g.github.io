@@ -17,12 +17,16 @@ $link-color-visited: mix(#000, $link-color, 25%) !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
 $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
+$header-background-color: mix($primary-color, #000, 10%) !default;
 
 
+/* header - masthead */
 .masthead {
-	background: mix($primary-color, #000, 10%) !default;
+	background: $header-background-color;
 }
-
+.greedy-nav {
+	background: $header-background-color;
+}
 
 .author__urls.social-icons .svg-inline--fa,
 .page__footer-follow .social-icons .svg-inline--fa {
