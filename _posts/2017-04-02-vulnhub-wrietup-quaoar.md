@@ -26,10 +26,6 @@ published: true
 
 
 
-
-
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/header.png)
-
 Now we finished the Kioptrix series its time to move on but continuing with the easy ones.
 
 **Name:** hackfest2016: Quaoar
@@ -54,13 +50,13 @@ Now we finished the Kioptrix series its time to move on but continuing with the 
 >SHA-256 DA39EC5E9A82B33BA2C0CD2B1F5E8831E75759C51B3A136D3CB5D8126E2A4753
 >You may have issues with VMware
 
-<!-- more -->
+
 
 ## Host Discovery
 
 The VM is nice enough to give us an IP it has picked up.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/1.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/1.png)
 
 ## Port Scannning 
 
@@ -190,9 +186,9 @@ http://192.168.0.122/
 
 This looks better.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/2.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/2.png)
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/3.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/3.png)
 
 I ran nikto on this to fidn out more
 
@@ -230,7 +226,7 @@ looks like we found a word press
 
 http://192.168.0.122/wordpress
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/4.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/4.png)
 
 ## Exploitation
 
@@ -238,7 +234,7 @@ http://192.168.0.122/wordpress
 
 Using WPScan i was able to bruteforce some creds to get into wordpress
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/5.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/5.png)
 
 
 <br/>
@@ -248,7 +244,7 @@ wpuser:wpuser
 <br/>
 
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/6.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/6.png)
 
 so we login as admin and have a little butch around. Standard wordpress crap here.
 
@@ -268,11 +264,11 @@ Use msfvenom to make our shell
 
 we upload **shell.php**
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/7.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/7.png)
 
 The upload fails but when looking in the Media tab we can see our payload and view it to obtain the full URL path to the shell.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/8.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/8.png)
 
 Prepare and start the multi-handler
 
@@ -292,7 +288,7 @@ http://192.168.0.122/wordpress/wp-content/uploads/2017/06/shell.php
 
 visiting the page kicks things into action
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/9.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/9.png)
 
 :) half way there 
 
@@ -306,7 +302,7 @@ Going through the output I see the wordpress folder and noticed the **wp-config.
 
 Upon closer inspection things were looking good. Looks like the root user password is stored in plain-text.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/10.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/10.png)
 <br/>
 root
 rootpassword!
@@ -315,13 +311,13 @@ could have maybe got bruteforcing SSH .... o well nearly there.
 
 I jumped out of the shell session and tried the found creds to login as SSH.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/11.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/11.png)
 
 got root 😎 😎 😎
 
 now we can read the flag files.
 
-![alt text]({{ site.baseurl }}/assets/assets/images/quaoar/12.png)
+![alt text]({{ site.baseurl }}/assets/images/vulnhub-writeup-quaoar/12.png)
 
 2bafe61f03117ac66a73c3c514de796e
 
