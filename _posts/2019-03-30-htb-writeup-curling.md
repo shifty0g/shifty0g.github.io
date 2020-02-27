@@ -37,18 +37,19 @@ published: true
 Just a webserver running Joomla on port 80
 
 ```
-root@ragingunicorn:~/hackthebox/Machines# nmap -sV -sV curling.htb
-Starting Nmap 7.70 ( https://nmap.org ) at 2018-10-27 16:22 EDT
-Nmap scan report for curling.htb (10.10.10.150)
-Host is up (0.020s latency).
-Not shown: 998 closed ports
-PORT   STATE SERVICE VERSION
+# Nmap 7.70 scan initiated Tue Dec 11 13:41:24 2018 as: nmap -sSV -p0- -oA nmap_tcp_full htb.curling
+Nmap scan report for htb.curling (10.10.10.150)
+Host is up, received user-set (0.038s latency).
+Scanned at 2018-12-11 13:41:59 GMT for 173s
+Not shown: 65534 closed ports
+Reason: 65534 resets
+PORT   STATE SERVICE REASON         VERSION
 22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
 80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 7.29 seconds
+Nmap done: 1 IP address (1 host up) scanned in 8.89 seconds
 ```
 
 ### Joomla
