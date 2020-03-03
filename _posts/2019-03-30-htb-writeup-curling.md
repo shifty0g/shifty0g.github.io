@@ -34,7 +34,7 @@ published: true
 
 
 ```
-echo "10.10.10.150 curling.htb >> /etc/hosts
+echo "10.10.10.150 curling.htb" >> /etc/hosts
 ```
 
 
@@ -85,7 +85,7 @@ Now can login to the admin page using the creds above - [http://curling.htb/admi
 ![](/assets/images/htb-writeup-curling/login.png)
 
 
-### Getting a Shell 
+# Getting a Shell 
 
 Time to get a shell 
 
@@ -144,7 +144,7 @@ meterpreter >
 Boom we get a shell as **www-data** :P
 
 
-### Getting User 
+# Getting User 
 
 unable to read `user.txt` due to insufficient permissons so need to esculate. 
 
@@ -187,7 +187,7 @@ BZh91AY&SY���H���A��P)ava�:4N���nT#�@%�`
 ```
 
 
-# bzip2
+### bzip2
 
 the file was confirmed to be a `bzip2` so let's decompress it...
 
@@ -196,7 +196,7 @@ root@kali2:~/challenges/hackthebox/curling# bzip2 -d data.out
 bzip2: Can't guess original name for data.out -- using data.out.out
 ```
 
-# gzip
+### gzip
 
 another compressed file inside 
 
@@ -209,7 +209,7 @@ root@kali2:~/challenges/hackthebox/curling# file data
 download: bzip2 compressed data, block size = 900k
 ```
 
-# bzip...again
+### bzip...again
 
 and another...:O
 
@@ -220,7 +220,7 @@ root@kali2:~/challenges/hackthebox/curling# file password
 password: POSIX tar archive (GNU)
 ```
 
-# tar
+### tar
 
 tar - it keeps on going 
 
@@ -247,7 +247,7 @@ cat user.txt
 floris@curling:~$
 ```
 
-### Privesc
+# Privesc to Root 
 
 First, let's upload our ssh key so we don't have to rely on that meterpreter shell and get in nice and easy 
 
