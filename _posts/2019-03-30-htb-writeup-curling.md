@@ -240,11 +240,9 @@ python3 -c 'import pty;pty.spawn("/bin/sh")'
 $ su -l floris
 su -l floris
 Password: 5d<wdCbdZu)|hChXll
-
 floris@curling:~$ cat user.txt
 cat user.txt
 65dd1d...
-floris@curling:~$
 ```
 
 # Privesc to Root 
