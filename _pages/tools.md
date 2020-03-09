@@ -2,6 +2,7 @@
 title: "Tools"
 permalink: /tools/
 date: 2020-03-09
+layout: single
 ---
 
 Some tools ive created nothing special.
