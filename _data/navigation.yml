@@ -1,6 +1,6 @@
 main:
-  - title: "Home"
-    url: /
+  - title: "Tools"
+    url: /tools/
   - title: "Posts"
     url: /year-archive/
   - title: "Categories"
