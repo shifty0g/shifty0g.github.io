@@ -7,6 +7,9 @@ layout: single
 
 Just a Few scripts - nothing special. enjoy my bad code 
 
+
+------------
+
 # Ultimate Nmap Parser 
 
 [https://github.com/shifty0g/ultimate-nmap-parser](https://github.com/shifty0g/ultimate-nmap-parser)
@@ -27,11 +30,9 @@ One nmap parser to rule them all!
 
 ## Install
 
-<br>
 {% highlight bash %}
 git clone https://github.com/shifty0g/ultimate-nmap-parser
 chmod +x /ultimate-nmap-parser/ultimate-nmap-parser.sh 
 {% endhighlight %}
-<br>
 
 
