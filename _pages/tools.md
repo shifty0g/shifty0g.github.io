@@ -3,6 +3,7 @@ title: "Tools"
 permalink: /tools/
 date: 2020-03-09
 layout: single
+classes: wide
 ---
 
 Just a Few scripts - nothing special. enjoy my bad code 
