@@ -4,6 +4,7 @@ date: 2017-02-25 12:52:16 +0000
 comments: true
 categories: challenges
 tags: challenges
+published: false
 ---
 
 So im adding all the writeups I did leading up to OSCP following on with Kioptrix level 2.

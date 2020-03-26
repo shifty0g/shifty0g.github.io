@@ -19,6 +19,7 @@ tags:
   - cron
   - php
   - easy
+  - hackthebox
 published: true
 ---
 

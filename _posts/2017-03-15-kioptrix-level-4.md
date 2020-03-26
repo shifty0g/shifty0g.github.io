@@ -4,6 +4,7 @@ title: "Kioptrix Level 1.3 (#4)"
 date: 2017-03-15 12:52:16 +0000
 comments: true
 categories: challenges
+published: false
 ---
 
 ![alt text]({{ site.baseurl }}/assets/images/kioptrix4/header.png)

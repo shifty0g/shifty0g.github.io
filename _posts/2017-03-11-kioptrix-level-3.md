@@ -4,6 +4,7 @@ date: 2017-03-11 12:52:16 +0000
 comments: true
 categories: challenges
 tags: challenges
+published: false
 ---
 
 ![alt text]({{ site.baseurl }}/assets/images/kioptrix3/header.png)
