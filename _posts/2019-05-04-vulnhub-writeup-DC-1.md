@@ -1,9 +1,24 @@
 ---
-title: "DC-1 [VulnHub]"
+title: "DC-1 - Vulnhub"
 date: 2019-04-10 12:52:16 +0000
 comments: true
-categories: challenges
-tags: challenges
+classes: wide
+header:
+  teaser: 
+  teaser_home_page: true
+  icon: /assets/images/vulnhub.webp
+
+categories:
+  - infosec
+  - writeup
+  - challenges
+tags:  
+  - database
+  - ctf
+  - webshells
+  - drupal
+  - easy
+  - vulnhub
 ---
 
  

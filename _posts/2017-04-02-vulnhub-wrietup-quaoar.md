@@ -9,7 +9,6 @@ header:
   teaser_home_page: true
   icon: /assets/images/vulnhub.webp
 categories:
-  - vulnhub
   - infosec
   - writeup
   - challenges
