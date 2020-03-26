@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Quaoar - Vulnhub
-excerpt: A nice and simple box abusing wordpress
+excerpt: A nice and simple box for someone who is starting out. Has a few different elements and some fun abusing wordpress
 date: 2017-04-02
 classes: wide
 header:
