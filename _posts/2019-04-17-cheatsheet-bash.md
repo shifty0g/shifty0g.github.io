@@ -17,7 +17,14 @@ So here is a collections of bits I have in my .zshrc (yes im a zsh guy)
 
 To install or use most of these can be added into `.bashrc` file providing you have the tool setup correctly.
 
-I will keep adding cool bits to this list overtime 
+I will keep adding cool bits to this list overtime. 
+
+
+
+
+
+
+
 
 nmap
 ======
