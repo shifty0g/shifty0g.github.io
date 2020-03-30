@@ -53,7 +53,7 @@ alias to update nmap and its scripts database
 alias nmap-update="sudo apt-get install nmap && nmap -script-updatedb"
 {% endhighlight %}
 
-scanning alias 
+Scanning alias 
 ---------------------------
 
 quite a few useful alias 
@@ -257,7 +257,7 @@ fi
 {% endhighlight %}
 
 
-tables-flush
+Tables-flush
 -----------------------------------
 This is a good alias to quickly clear all the table rules
 
