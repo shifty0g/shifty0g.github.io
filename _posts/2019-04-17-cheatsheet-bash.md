@@ -38,7 +38,7 @@ just a lazy one to quickly list out the nmap scripts avalible
 
 {% highlight bash %}
 alias nmap-scripts='ls -la /usr/share/nmap/scripts/'
-{% highlight bash %}
+{% endhighlight %}
 
 ### update nmap script DB
 
