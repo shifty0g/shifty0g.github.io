@@ -232,6 +232,28 @@ fi
 {% endhighlight %}
 
 
+### Tables-Flush
+
+quickly flush iptables arptables est.
+
+Use:
+
+{% highlight bash %}
+tables-flush
+{% endhighlight %}
+
+
+{% highlight bash %}
+function tables-flush () {
+iptables -Z && iptables -F
+echo "[+] iptables - flushed"
+arptables -Z && arptables -F
+echo "[+] arptables - flushed"
+ip6tables -Z && ip6tables -F 
+echo "[+] ip6tables - flushed"
+}
+{% endhighlight %}
+
 
 # Other
 
