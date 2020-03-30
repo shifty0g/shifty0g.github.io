@@ -5,6 +5,7 @@ comments: true
 published: true
 toc: false
 toc_sticky: true
+classes: wide
 tags:  
   - bash
   - script
