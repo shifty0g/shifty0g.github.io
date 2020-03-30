@@ -4,6 +4,7 @@ date: 2019-04-17 12:52:16 +0000
 comments: true
 published: true
 toc: true
+toc_sticky: true
 tags:  
   - bash
   - script
@@ -263,4 +264,6 @@ Tables-flush
 -----------------------------------
 This is a good alias to quickly clear all the table rules
 
+{% highlight bash %}
 alias tables-flush='iptables -Z && iptables -F && arptables -Z && arptables -F'
+{% endhighlight %}
