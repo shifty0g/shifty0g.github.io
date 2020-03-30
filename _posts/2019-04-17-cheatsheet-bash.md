@@ -46,7 +46,7 @@ update alias
 
 {% highlight bash %}
 alias nmap-update="nmap -script-updatedb"
-{% highlight bash %}
+{% endhighlight %}
 
 
 ### quick nmap scans 
