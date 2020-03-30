@@ -7,7 +7,6 @@ classes: wide
 header:
   teaser: /assets/images/htb-writeup-curling/curling_logo.png
   teaser_home_page: true
-  icon: /assets/images/hackthebox.webp
 categories:
   - infosec
   - writeup

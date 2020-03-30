@@ -6,8 +6,6 @@ classes: wide
 header:
   teaser: 
   teaser_home_page: true
-  icon: /assets/images/vulnhub.webp
-
 categories:
   - infosec
   - writeup

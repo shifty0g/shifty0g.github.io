@@ -7,7 +7,6 @@ classes: wide
 header:
   teaser: /assets/images/vulnhub-writeup-quaoar/quaoar_header.png
   teaser_home_page: true
-  icon: /assets/images/vulnhub.webp
 categories:
   - infosec
   - writeup
