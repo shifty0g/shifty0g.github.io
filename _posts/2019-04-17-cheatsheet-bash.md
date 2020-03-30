@@ -49,7 +49,7 @@ alias nmap-update="nmap -script-updatedb"
 {% endhighlight %}
 
 
-### quick nmap scans 
+### handy quick scans
 
 some of these alias are useful to run quick nmap scripts
 
@@ -80,9 +80,6 @@ alias nmap-tcp-vulnscan='nmap -sS -v --reason --script=vulscan/vulscan.nse --scr
 alias nmap-tcp-def-script-vuln-unsafe='nmap -sSV ---script exploit,vuln --script-args=unsafe=1 -oN nmap_tcp_script-vuln-unsafe $1'
 alias nmap-tcp-fast-script-heavy-unsafe='nmap -sSV -F --script vuln,brute,exploit,intrusive,fuzzer --script-args=unsafe=1 -oN nmap_tcp_script-heavy-unsafe $1'
 {% endhighlight %}
-
-
-
 # grep 
 
 some day to day greps that always useful to keep at the ready 
@@ -105,7 +102,6 @@ alias grep-mac="grep -oE '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'"
 # grep out URL -  may need to tidy output up a little 
 alias grep-url="egrep -o 'http.+'"
 {% endhighlight %}
-
 
 # Metasploit
 
@@ -133,8 +129,6 @@ alias nessus-cli='/opt/nessus/sbin/nessuscli'
 # start nessus and open in firefox
 alias n="service nessusd start && sleep 1.5 && nohup firefox https://localhost:8834/ &>/dev/null &"
 {% endhighlight %}
-
-
 
 # Networking 
 
@@ -193,7 +187,6 @@ Code:
 function static() { ip a flush eth0 && sleep 0.5 && ifconfig eth0 $1 && sleep 0.5 && ifconfig eth0 up && ifconfig eth0 && echo "" && cat /etc/resolv.conf && echo "" && ip route; }
 {% endhighlight %}
 
-
 # Block IP 
 
 this is really useful to exclude an IP address from being scanned whatsoever
@@ -230,7 +223,6 @@ elif [ "$1" ]; then
 fi
 }
 {% endhighlight %}
-
 
 ### Tables-Flush
 
