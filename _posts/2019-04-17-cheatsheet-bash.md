@@ -14,10 +14,7 @@ categories:
 
 So here is a collections of bits i keep in my .zshrc (yes im a zsh guy) to make my life easier. This is a growing list 
 
-
-
-
-
+To install or use most of these can be added into `.bashrc` file providing you have the tool setup properly
 
 
 # nmap
@@ -41,19 +38,22 @@ just a lazy one to quickly list out the nmap scripts avalible
 
 {% highlight bash %}
 alias nmap-scripts='ls -la /usr/share/nmap/scripts/'
-{% endhighlight %}
+{% highlight bash %}
 
+## update nmap
 
-### nmap alias
+update alias
 
-
+{% highlight bash %}
+alias nmap-update="nmap -script-updatedb"
 {% highlight bash %}
 
 
-# update nmap scripts
-alias nmap-update="nmap -script-updatedb"
+### quick nmap scans 
 
-# nmap - host discovery
+
+{% highlight bash %}
+# host discovery
 alias nmap-ping='sudo nmap -sP -v -n -oA nmap_ping $1'
 alias nmap-xmas='sudo nmap -n -sX -oN nmap_xmas $1'
 alias nmap-protocol='sudo nmap -T4 -sO $1 -oA nmap_proto'
@@ -61,18 +61,18 @@ alias nmap-protocol='sudo nmap -T4 -sO $1 -oA nmap_proto'
 alias nmap-disc-adv='sudo nmap -v -n -PE -PM -PS21,22,23,25,26,53,80,81,110,111,113,135,139,143,179,199,443,445,465,514,548,554,587,993,995,1025,1026,1433,1720,1723,2000,2001,3306,3389,5060,5900,6001,8000,8080,8443,8888,10000,32768,49152 -PA21,80,443,13306 -oA nmap_disc_adv $1'
 alias nmap-disc-adv2='nmap -sn --min-hostgroup 100 -vv --max-hostgroup 125 -PE -PM -PS21,22,23,25,26,53,80,81,110,111,113,135,139,143,179,199,443,445,465,514,548,554,587,993,995,1025,1026,1433,1720,1723,2000,2001,3306,3389,5060,5900,6001,8000,8080,8443,8888,10000,32768,49152 -PP -PU161,139 -PA22,80,443,445,3389 --source-port 53 $1 -oA nmap_disc_adv2'
 
-# nmap - tcp
+# tcp
 alias nmap-tcp-fast='nmap -sSV -F -vvv --reason -oA nmap_tcp_fast $1'
 alias nmap-tcp-full='nmap -sSV -vvv -p0- --reason -oA nmap_tcp_full $1'
 alias nmap-tcp-fullconn='nmap -sTV -vvv -p0- --reason -oA nmap_tcp_fullconn $1'
 alias nmap-tcp-def='nmap -sSV -vvv --reason --script=banner,version -oA nmap_tcp_def_safe $1'
 
-# nmap - udp
+# udp
 alias nmap-udp-def='nmap -v -sU -Pn -n --reason -oA nmap_udp_def $1'
 alias nmap-udp-fast='nmap -v -Pn -sU -n -F --reason -oA nmap_udp_fast $1'
-alias nmap-udp-full='nmap -sU -Pn -n -v --reason -oA nmap_udp_full -p0- --min-parallelism 100 --min-rtt-timeout 30ms --max-rtt-timeout 250ms --max-retries 3 --max-scan-delay 0 --min-rate 1000 $1'
 
-# nmap - vulnscan
+# vulnscan
+# this needs the vulscan script installing - https://github.com/scipag/vulscan
 alias nmap-tcp-vulnscan='nmap -sS -v --reason --script=vulscan/vulscan.nse --script-args vulscanshowall=1 -oN nmap_vulnscan $1'
 
 # nmap - deeper scripts
@@ -82,7 +82,7 @@ alias nmap-tcp-fast-script-heavy-unsafe='nmap -sSV -F --script vuln,brute,exploi
 
 
 
-### grep 
+# grep 
 
 {% highlight bash %}
 #colored grep
@@ -98,6 +98,9 @@ alias grep-ip6='grep -oE "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]
 
 #grep out just MAC addres 08:00:27:3b:0c:7d (ifconfig| grep-mac)
 alias grep-mac="grep -oE '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'" 
+
+# grep out URL -  may need to tidy output up a little 
+alias grep-url="egrep -o 'http.+'"
 {% endhighlight %}
 
 
