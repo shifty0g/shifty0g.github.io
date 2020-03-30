@@ -149,12 +149,88 @@ alias td='tcpdump -i eth0'
 # clear arptables & iptables 
 alias tables-flush='iptables -Z && iptables -F && arptables -Z && arptables -F'
 
-# will clear everything and get a dhcp address on eth0
-alias dhcp='ip a flush eth0 && ifconfig eth0 down && ifconfig eth0 up && dhclient -v eth0 && ifconfig eth0 && echo "" && cat /etc/resolv.conf && echo "" && ip route'
-
 # run netstat see what ports are listening
 alias ports='netstat -tulanp'
 {% endhighlight %}
+
+### DHCP 
+
+This is a good function it will flush the current ip and attempts to get DHCP address
+
+Use:
+{% highlight bash %}
+dhcp		#  tries to get dhcp address on eth0 
+dhcp eth1	#  tries to get dhcp address on eth1
+{% endhighlight %}
+
+Code:
+
+{% highlight bash %}
+function dhcp() {
+if [ -z "$1" ]
+then
+	ip a flush eth0 && ifconfig eth0 down && ifconfig eth0 up && dhclient -v eth0 && ifconfig eth0 && echo "" && cat /etc/resolv.conf && echo "" && ip route
+else
+	ip a flush $1 && ifconfig $1 down && ifconfig $1 up && dhclient -v $1 && ifconfig $1 && echo "" && cat /etc/resolv.conf && echo "" && ip route
+fi
+{% endhighlight %}
+
+
+### Static
+
+quickly set a static IPv4 address on eth0
+
+Use:
+
+{% highlight bash %}
+static <IP ADDRESS>/<SUBNET>
+static 192.168.12.22/24
+{% endhighlight %}
+
+Code:
+
+{% highlight bash %}
+function static() { ip a flush eth0 && sleep 0.5 && ifconfig eth0 $1 && sleep 0.5 && ifconfig eth0 up && ifconfig eth0 && echo "" && cat /etc/resolv.conf && echo "" && ip route; }
+{% endhighlight %}
+
+
+# Block IP 
+
+this is really useful to exclude an IP address from being scanned whatsoever
+this uses arptables so make sure thats install (sudo apt-get install arptables)
+
+
+Use:
+
+{% highlight bash %}
+static <IP ADDRESS>/<SUBNET>
+block-ip 192.168.1.22/30
+{% endhighlight %}
+
+Code:
+	
+{% highlight bash %}
+function block-ip () {
+if [ -z "$1" ]; then
+	echo "[*] Usage: $0 <IPv4 ADDRESS - ie 10.2.202.124/30>"
+	return
+elif [ "$1" ]; then
+	#block an ipv4 address
+	# arptables (apt-get install arptables) - https://linoxide.com/security/use-arptables-linux/
+	sudo arptables -A INPUT -s $1 -j DROP
+	sudo arptables -A OUTPUT -s $1 -j DROP
+	sudo arptables -A INPUT -d $1 -j DROP
+	sudo arptables -A OUTPUT -d $1 -j DROP
+	#iptables
+	sudo iptables -A INPUT -s $1 -j DROP
+	sudo iptables -A OUTPUT -s $1 -j DROP
+	sudo iptables -A INPUT -d $1 -j DROP
+	sudo iptables -A OUTPUT -d $1 -j DROP
+	tables-show
+fi
+}
+{% endhighlight %}
+
 
 
 # Other
