@@ -19,7 +19,7 @@ To install or use most of these can be added into `.bashrc` file providing you h
 
 # nmap
 
-## Coloured nmap output
+### Coloured nmap output
 
 make nmap look pretty and colourful
 
@@ -32,7 +32,7 @@ alias nmap="grc nmap"
 
 ![](/assets/images/bash/1.png)
 
-## list out the nmap scripts 
+### list out the nmap scripts 
 
 just a lazy one to quickly list out the nmap scripts avalible
 
@@ -40,7 +40,7 @@ just a lazy one to quickly list out the nmap scripts avalible
 alias nmap-scripts='ls -la /usr/share/nmap/scripts/'
 {% highlight bash %}
 
-## update nmap
+### update nmap script DB
 
 update alias
 
@@ -51,6 +51,7 @@ alias nmap-update="nmap -script-updatedb"
 
 ### quick nmap scans 
 
+some of these alias are useful to run quick nmap scripts
 
 {% highlight bash %}
 # host discovery
@@ -84,6 +85,8 @@ alias nmap-tcp-fast-script-heavy-unsafe='nmap -sSV -F --script vuln,brute,exploi
 
 # grep 
 
+some day to day greps that always useful to keep at the ready 
+
 {% highlight bash %}
 #colored grep
 alias grep='grep --color=auto'
@@ -104,7 +107,7 @@ alias grep-url="egrep -o 'http.+'"
 {% endhighlight %}
 
 
-### Metasploit
+# Metasploit
 
 {% highlight bash %}
 # update metasploit
@@ -112,7 +115,7 @@ alias m-update='apt update; apt install metasploit-framework'
 {% endhighlight %}
 
 
-### Nessus 
+# Nessus 
 
 {% highlight bash %}
 # start service
@@ -133,7 +136,7 @@ alias n="service nessusd start && sleep 1.5 && nohup firefox https://localhost:8
 
 
 
-### Networking 
+# Networking 
 
 {% highlight bash %}
 alias i='ifconfig -a'
@@ -154,77 +157,10 @@ alias ports='netstat -tulanp'
 {% endhighlight %}
 
 
-### Misc 
+# Other
 
 {% highlight bash %}
-
-# chmod
-alias read='chmod +r $1'
-alias write='chmod +w $1'
-alias execute='chmod +x $1'
-
-# up and down dirs
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
-alias bk='cd ..'
-
-# better ls
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls --color=auto --group-directories-first -rthla'
-alias ll='ls -l --color=auto'
-alias du='du -h -c'
-alias diff='colordiff' # sudo apt-get install colordiff
-
-# lazy clear
-alias cl='clear && l'
-alias c='clear'
-alias C='clear'
-
-# misc
-alias mkdir='mkdir -pv'
-alias e!='exit'
-alias now='date +"%T"'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
-alias xo='xdg-open .'  # opens current directory in explorer
-
-# start firefox 
-alias f='nohup firefox &>/dev/null &'
-
-# apt-get 
-alias update='sudo apt-get update'
-alias updatesys='apt-get update && apt-get upgrade'
-alias updatedist='apt-get dist-upgrade'
-alias install="sudo apt-get install"
-alias remove="sudo apt-get remove"
-
-# opens current directory in explorer
-alias xo='xdg-open .'  
-
-# Safety checks
-alias rm='rm -I --preserve-root'
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
-alias h='history'
-alias j='jobs -l'
-alias which='type -a'
-alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-{% endhighlight %}
-
-
-
-### Preperation
-
-{% highlight bash %}
-# create target.txt file just use 't'
+# create target.txt file just use 't' - very lazy 
 alias t="nano targets.txt && realpath targets.txt && echo "------------------------------------------" && cat targets.txt && echo"
 
 # create excludes.txt file just  use 'e'
