@@ -19,7 +19,7 @@ To install or use most of these can be added into `.bashrc` file providing you h
 
 # nmap
 
-### Coloured nmap output
+#### Coloured nmap output
 
 make nmap look pretty and colourful
 
@@ -32,7 +32,7 @@ alias nmap="grc nmap"
 
 ![](/assets/images/bash/1.png)
 
-### list out the nmap scripts 
+#### list out the nmap scripts 
 
 just a lazy one to quickly list out the nmap scripts avalible
 
@@ -40,7 +40,7 @@ just a lazy one to quickly list out the nmap scripts avalible
 alias nmap-scripts='ls -la /usr/share/nmap/scripts/'
 {% endhighlight %}
 
-### update nmap script DB
+#### update nmap script DB
 
 update alias
 
@@ -49,7 +49,7 @@ alias nmap-update="nmap -script-updatedb"
 {% endhighlight %}
 
 
-### handy quick scans
+#### handy quick scans
 
 some of these alias are useful to run quick nmap scripts
 
@@ -147,7 +147,7 @@ alias tables-flush='iptables -Z && iptables -F && arptables -Z && arptables -F'
 alias ports='netstat -tulanp'
 {% endhighlight %}
 
-### DHCP 
+#### DHCP 
 
 This is a good function it will flush the current ip and attempts to get DHCP address
 
@@ -170,7 +170,7 @@ fi
 {% endhighlight %}
 
 
-### Static
+#### Static
 
 quickly set a static IPv4 address on eth0
 
@@ -187,7 +187,7 @@ Code:
 function static() { ip a flush eth0 && sleep 0.5 && ifconfig eth0 $1 && sleep 0.5 && ifconfig eth0 up && ifconfig eth0 && echo "" && cat /etc/resolv.conf && echo "" && ip route; }
 {% endhighlight %}
 
-# Block IP 
+#### Block IP 
 
 this is really useful to exclude an IP address from being scanned whatsoever
 this uses arptables so make sure thats install (sudo apt-get install arptables)
@@ -224,7 +224,7 @@ fi
 }
 {% endhighlight %}
 
-### Tables-Flush
+#### Tables-Flush
 
 quickly flush iptables arptables est.
 
