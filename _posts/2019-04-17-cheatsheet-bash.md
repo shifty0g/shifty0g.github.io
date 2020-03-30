@@ -3,7 +3,7 @@ title: "Lazy Bash Tricks for Pentesters"
 date: 2019-04-17 12:52:16 +0000
 comments: true
 published: true
-toc: true
+toc: false
 toc_sticky: true
 tags:  
   - bash
