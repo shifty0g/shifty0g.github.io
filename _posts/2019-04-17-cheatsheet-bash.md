@@ -2,33 +2,64 @@
 title: "Lazy Bash Tricks for Pentesters"
 date: 2019-04-17 12:52:16 +0000
 comments: true
-categories: cheatsheet 
 published: true
+toc: true
 tags:  
   - bash
+  - script
   - alias
+categories: 
+  - cheatsheet 
 ---
 
-So here is a collections of aliases I use to make my life easier. I will create a seperate cheatsheet for functions later on.
-This will grow over time
+So here is a collections of bits i keep in my .zshrc (yes im a zsh guy) to make my life easier. This is a growing list 
 
 
-<!-- more -->
 
-### nmap
+
+
+
+
+# nmap
+
+## Coloured nmap output
+
+make nmap look pretty and colourful
 
 {% highlight bash %}
-# list out the nmap scripts 
+# install grc
+sudo apt-get install grc
+# create a new alias for nmap 
+alias nmap="grc nmap"
+{% endhighlight %}
+
+![](/assets/images/bash/1.png)
+
+## list out the nmap scripts 
+
+just a lazy one to quickly list out the nmap scripts avalible
+
+{% highlight bash %}
 alias nmap-scripts='ls -la /usr/share/nmap/scripts/'
+{% endhighlight %}
+
+
+### nmap alias
+
+
+{% highlight bash %}
+
 
 # update nmap scripts
 alias nmap-update="nmap -script-updatedb"
 
 # nmap - host discovery
-alias nmap-ping='nmap -sP -v -n -oA nmap_ping $1'
-alias nmap-adv-disc='nmap -v -n -PE -PM -PS21,22,23,25,26,53,80,81,110,111,113,135,139,143,179,199,443,445,465,514,548,554,587,993,995,1025,1026,1433,1720,1723,2000,2001,3306,3389,5060,5900,6001,8000,8080,8443,8888,10000,32768,49152 -PA21,80,443,13306 -oA nmap_ping-adv $1'
-alias nmap-xmas='nmap -n -sn -oN nmap_xmas $1'
-alias nmap-hostcheck='nmap -Pn -v -n -T4 -sS -oN nmap_hostcheck -p 22,445,80,443,21,23,25,110,139,53,3389,3306,8080,5900,1723 $1 '
+alias nmap-ping='sudo nmap -sP -v -n -oA nmap_ping $1'
+alias nmap-xmas='sudo nmap -n -sX -oN nmap_xmas $1'
+alias nmap-protocol='sudo nmap -T4 -sO $1 -oA nmap_proto'
+
+alias nmap-disc-adv='sudo nmap -v -n -PE -PM -PS21,22,23,25,26,53,80,81,110,111,113,135,139,143,179,199,443,445,465,514,548,554,587,993,995,1025,1026,1433,1720,1723,2000,2001,3306,3389,5060,5900,6001,8000,8080,8443,8888,10000,32768,49152 -PA21,80,443,13306 -oA nmap_disc_adv $1'
+alias nmap-disc-adv2='nmap -sn --min-hostgroup 100 -vv --max-hostgroup 125 -PE -PM -PS21,22,23,25,26,53,80,81,110,111,113,135,139,143,179,199,443,445,465,514,548,554,587,993,995,1025,1026,1433,1720,1723,2000,2001,3306,3389,5060,5900,6001,8000,8080,8443,8888,10000,32768,49152 -PP -PU161,139 -PA22,80,443,445,3389 --source-port 53 $1 -oA nmap_disc_adv2'
 
 # nmap - tcp
 alias nmap-tcp-fast='nmap -sSV -F -vvv --reason -oA nmap_tcp_fast $1'
