@@ -24,6 +24,32 @@ I will keep adding cool bits to this list overtime.
 
 
 
+grep 
+=============
+some day to day greps that always useful to keep at the ready. 
+
+{% highlight bash %}
+#colored grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#grep out just ip address 129.168.0.1 (cat nmap.gnmap | grep-ip)
+alias grep-ip='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"' 
+
+#grep out just ipv6 address  3ffe:1900:4545:3:200:f8ff:fe21:67cf (ifconfig | grep-ip6)
+alias grep-ip6='grep -oE "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"'
+
+#grep out just MAC addres 08:00:27:3b:0c:7d (ifconfig| grep-mac)
+alias grep-mac="grep -oE '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'" 
+
+# grep out URL http://test.com -  may need to tidy output up a little 
+alias grep-url="egrep -o 'http.+'"
+{% endhighlight %}
+
+
+
+
 
 
 nmap
@@ -104,28 +130,6 @@ alias nmap-tcp-fast-script-heavy-unsafe='nmap -sSV -F --script vuln,brute,exploi
 {% endhighlight %}
 
 
-grep 
-=============
-some day to day greps that always useful to keep at the ready. 
-
-{% highlight bash %}
-#colored grep
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-#grep out just ip address 129.168.0.1 (cat nmap.gnmap | grep-ip)
-alias grep-ip='grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"' 
-
-#grep out just ipv6 address  3ffe:1900:4545:3:200:f8ff:fe21:67cf (ifconfig | grep-ip6)
-alias grep-ip6='grep -oE "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"'
-
-#grep out just MAC addres 08:00:27:3b:0c:7d (ifconfig| grep-mac)
-alias grep-mac="grep -oE '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'" 
-
-# grep out URL http://test.com -  may need to tidy output up a little 
-alias grep-url="egrep -o 'http.+'"
-{% endhighlight %}
 
 
 metasploit
