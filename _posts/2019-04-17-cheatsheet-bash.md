@@ -1,11 +1,15 @@
 ---
 title: "Lazy Bash Tricks for Pentesters"
+excerpt: A collection of useful bits and bobs which I have made to make life easier when pentesting
 date: 2019-04-17 12:52:16 +0000
 comments: true
 published: true
 toc: false
 toc_sticky: true
-classes: wide
+header:
+  overlay_color: "#333"
+  teaser: 
+  teaser_home_page: true
 tags:  
   - bash
   - script
