@@ -52,3 +52,9 @@ $header-background-color: mix($primary-color, #000, 10%) !default;
 .ais-search-box .ais-search-box--input {
   background-color: $form-background-color;
 }
+
+/* default max-width 110px */
+.author__avatar img {
+    max-width: 200px;
+    border-radius: 55%;
+}
