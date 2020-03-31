@@ -7,7 +7,6 @@ published: true
 toc: false
 toc_sticky: true
 header:
-  overlay_color: "#333"
   teaser: 
   teaser_home_page: true
 tags:  
