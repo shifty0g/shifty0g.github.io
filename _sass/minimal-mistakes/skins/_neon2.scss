@@ -58,3 +58,8 @@ $header-background-color: mix($primary-color, #000, 10%) !default;
     max-width: 200px;
     border-radius: 55%;
 }
+
+.sidebar img {
+    width: 100%;
+    height: 100%;
+}
