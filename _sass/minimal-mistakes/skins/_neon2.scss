@@ -25,12 +25,6 @@ $header-background-color: mix($primary-color, #000, 10%) !default;
 .greedy-nav {background: $header-background-color;}
 
 
-.author__avatar img {
-   /*  width: 120px; */
-    height: 100px;
-}
-
-
 
 
 .author__urls.social-icons .svg-inline--fa,
@@ -53,7 +47,7 @@ $header-background-color: mix($primary-color, #000, 10%) !default;
   background-color: $form-background-color;
 }
 
-/* default max-width 110px */
+/* default max-width 110px / 120px */
 .author__avatar img {
   /*   max-width: 200px; */
     border-radius: 50%;
