@@ -6,6 +6,7 @@ comments: true
 published: true
 toc: false
 toc_sticky: true
+classes: wide
 header:
   teaser: 
   teaser_home_page: true
