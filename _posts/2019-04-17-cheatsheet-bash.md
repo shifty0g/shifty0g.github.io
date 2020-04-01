@@ -283,3 +283,55 @@ This is a good alias to quickly clear all the table rules
 {% highlight bash %}
 alias tables-flush='iptables -Z && iptables -F && arptables -Z && arptables -F'
 {% endhighlight %}
+
+
+
+Log Info
+================
+
+This function is useful just to quickly save a record of things such as IP Address, Current User and Time before you start a test.
+creates a file called info.txt in current directory
+
+Use:
+
+{% highlight bash %}
+loginfo	
+{% endhighlight %}
+
+Code:
+
+{% highlight bash %}
+function loginfo () {
+#logfile="info_$(date "+%m-%d-%y_%H-%M").txt"
+logfile="info.txt"
+echo "---------------------" | tee  $logfile
+echo "date:"                 | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+date                         | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "User:"                 | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+id							 | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "pwd"                   | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+pwd                          | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "ifconfig:"             | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+ifconfig                     | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "Route:"                | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+route                        | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "/etc/resolv.conf"      | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+cat /etc/resolv.conf         | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+echo "nmap --iflist"      | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+nmap --iflist		       | tee -a $logfile
+echo "---------------------" | tee -a $logfile
+}
+{% endhighlight %}
