@@ -4,7 +4,7 @@ date: 2017-02-17 12:52:16 +0000
 comments: true
 categories: challenges
 tags: challenges
-published: true
+published: false
 ---
 
 This is a challenge writeup on my blog to sharpen my markdown skillz and figure out a nice template going forward! 
