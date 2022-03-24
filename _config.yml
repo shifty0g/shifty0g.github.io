@@ -1,6 +1,6 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
+title: shify0g
+description: 'Just my blog'
 url: ''
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
@@ -8,12 +8,12 @@ baseurl: ''
 # disable_landing_page: true
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'shifty0g'
+  email: 
+  twitter_username: shifty0g
+  facebook_username: 
+  github_username:  shifty0g
+  linkedin_username:  
 
 defaults:
   -
