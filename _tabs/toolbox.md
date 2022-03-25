@@ -1,6 +1,6 @@
 ---
 title: Toolbox
-icon: fa-solid fa-toolbox
+icon: fas fa-toolbox
 order: 4
 ---
 
