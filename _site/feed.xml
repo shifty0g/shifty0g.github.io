@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>/_site/</id>
+  <id>http://localhost:4000/_site/</id>
   <title>Chirpy</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-03-25T17:56:25+00:00</updated>
+  <updated>2022-03-25T18:07:34+00:00</updated>
   <author>
     <name>your_full_name</name>
-    <uri>/_site/</uri>
+    <uri>http://localhost:4000/_site/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="/_site/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/_site/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="/_site/"/>
+    href="http://localhost:4000/_site/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2022 your_full_name </rights>
   <icon>/_site/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Getting Started</title>
-    <link href="/_site/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
+    <link href="http://localhost:4000/_site/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
     <published>2019-08-09T13:55:00+01:00</published>
   
     <updated>2022-03-25T17:44:11+00:00</updated>
   
-    <id>/_site/posts/getting-started/</id>
-    <content src="/_site/posts/getting-started/" />
+    <id>http://localhost:4000/_site/posts/getting-started/</id>
+    <content src="http://localhost:4000/_site/posts/getting-started/" />
     <author>
       <name>cotes</name>
     </author>
