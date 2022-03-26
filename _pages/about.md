@@ -1,6 +1,6 @@
 ---
-title: "About"
-permalink: /about/
-date: 2019-02-15
+title: "whoami"
+permalink: /whoami/
 ---
 
+Just pentester with imposter syndrome 
