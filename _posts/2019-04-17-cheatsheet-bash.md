@@ -1,15 +1,12 @@
 ---
-title: "Lazy Bash Tricks for Pentesters"
+title: "Bash Tricks for Pentesters"
 excerpt: A collection of useful bits and bobs which I have made to make life easier when pentesting
 date: 2019-04-17 12:52:16 +0000
 comments: true
 published: true
-toc: false
+toc: true`
 toc_sticky: true
 classes: wide
-header:
-  teaser: 
-  teaser_home_page: true
 tags:  
   - bash
   - script
@@ -23,9 +20,6 @@ So here is a collections of bits I have in my .zshrc (yes im a zsh guy)
 To install or use most of these can be added into `.bashrc` file providing you have the tool setup correctly.
 
 I will keep adding cool bits to this list overtime. 
-
-
-
 
 
 
