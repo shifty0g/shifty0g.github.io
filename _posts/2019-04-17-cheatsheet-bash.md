@@ -4,8 +4,8 @@ excerpt: A collection of useful bits and bobs which I have made to make life eas
 date: 2019-04-17 12:52:16 +0000
 comments: true
 published: true
-toc: false
-toc_sticky: true
+toc: true 
+toc_sticky: false
 classes: wide
 header:
   teaser: 
