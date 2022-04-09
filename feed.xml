@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>/</id>
   <title>@shifty0g</title>
   <subtitle></subtitle>
-  <updated>2022-04-09T09:50:18+01:00</updated>
+  <updated>2022-04-09T18:41:59+01:00</updated>
   <author>
     <name></name>
-    <uri>http://localhost:4000/</uri>
+    <uri>/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2022  </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Toolbox</title>
-    <link href="http://localhost:4000/posts/toolbox/" rel="alternate" type="text/html" title="Toolbox" />
+    <link href="/posts/toolbox/" rel="alternate" type="text/html" title="Toolbox" />
     <published>2022-04-03T13:55:00+01:00</published>
   
     <updated>2022-04-03T13:55:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/toolbox/</id>
-    <content src="http://localhost:4000/posts/toolbox/" />
+    <id>/posts/toolbox/</id>
+    <content src="/posts/toolbox/" />
     <author>
       <name></name>
     </author>
@@ -67,13 +67,13 @@ http...
   
   <entry>
     <title>So I actually found a bug in the wild (XSS)</title>
-    <link href="http://localhost:4000/posts/xss-bug-writeup/" rel="alternate" type="text/html" title="So I actually found a bug in the wild (XSS)" />
+    <link href="/posts/xss-bug-writeup/" rel="alternate" type="text/html" title="So I actually found a bug in the wild (XSS)" />
     <published>2022-01-22T13:55:00+01:00</published>
   
     <updated>2022-01-22T13:55:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/xss-bug-writeup/</id>
-    <content src="http://localhost:4000/posts/xss-bug-writeup/" />
+    <id>/posts/xss-bug-writeup/</id>
+    <content src="/posts/xss-bug-writeup/" />
     <author>
       <name></name>
     </author>
@@ -92,14 +92,14 @@ http...
 
 
 
-      Yep i Finally found one
-
+      Yep i Finally found one. 
 I found Stored XSS on bzscan and it wasnt on purpose. :laughing:
 
-So i was on a testing some front end webappp which uses the binance smart chain
+So a while ago was on a testing some front end webappp which uses the Binance Smart Chain
 
-….im still writing this up
+It was possible to include a stored cross-site scripting payload into a transaction which was found to execute. The payload gets encoded within the data parameter of the HTTP request as shown below
 
+Payload: &amp;lt;ma...
     </summary>
   
 
@@ -107,14 +107,58 @@ So i was on a testing some front end webappp which uses the binance smart chain
 
   
   <entry>
-    <title>Bash Tricks</title>
-    <link href="http://localhost:4000/posts/bash-tricks/" rel="alternate" type="text/html" title="Bash Tricks" />
+    <title>ZSH Stuff</title>
+    <link href="/posts/zsh/" rel="alternate" type="text/html" title="ZSH Stuff" />
     <published>2022-01-22T13:55:00+01:00</published>
   
     <updated>2022-01-22T13:55:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/bash-tricks/</id>
-    <content src="http://localhost:4000/posts/bash-tricks/" />
+    <id>/posts/zsh/</id>
+    <content src="/posts/zsh/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      will share some cool stuff i have done to my zsh
+
+to install most of these . stick in .zshrc
+
+My Prompt
+
+Here is my colourful PS1. i like this one it gives me the key info i want to see and I can copy the command i ran along with the time and date from the shell into my notes
+
+
+
+Jeyll dont like it in a code block so grab it from HERE
+
+To install replace the $PROMPT varaiable in your .zshrc the ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Linux Magic</title>
+    <link href="/posts/linux-magic/" rel="alternate" type="text/html" title="Linux Magic" />
+    <published>2022-01-22T13:55:00+01:00</published>
+  
+    <updated>2022-01-22T13:55:00+01:00</updated>
+  
+    <id>/posts/linux-magic/</id>
+    <content src="/posts/linux-magic/" />
     <author>
       <name></name>
     </author>
@@ -133,21 +177,19 @@ So i was on a testing some front end webappp which uses the binance smart chain
 
 
 
-      So here is a collections of bits I have in my .zshrc (yes im a zsh guy)
+      :tophat:
 
-To install or use most of these can be added into .bashrc or .zshrc file providing you have the tool setup correctly.
+So here is a collections of bits I have in my .zshrc (yes im a zsh guy)
 
-I will keep adding cool bits to this list overtime.
+These are mostly alias and functions which can be added into .bashrc or .zshrc file providing you have the tool setup correctly. I will try to include anything else needed in the rlevent section.
 
-enjoy :)
+I will keep adding cool bits to this list overtime. :smile:
+
+enjoy
 
 grep
 
-some day to day greps that always useful to keep at the ready.
-
-# colored grep
-alias grep='grep --color=auto'
-alias egrep='egrep --color...
+some day to day greps that always useful to...
     </summary>
   
 
@@ -155,23 +197,21 @@ alias egrep='egrep --color...
 
   
   <entry>
-    <title>Kioptrix Level 1</title>
-    <link href="http://localhost:4000/posts/kioptrix-level-1/" rel="alternate" type="text/html" title="Kioptrix Level 1" />
-    <published>2017-02-17T13:52:16+01:00</published>
+    <title>Level Up you Game!</title>
+    <link href="/posts/level-up/" rel="alternate" type="text/html" title="Level Up you Game!" />
+    <published>2022-01-13T00:00:00+01:00</published>
   
-    <updated>2017-02-17T13:52:16+01:00</updated>
+    <updated>2022-01-13T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/kioptrix-level-1/</id>
-    <content src="http://localhost:4000/posts/kioptrix-level-1/" />
+    <id>/posts/level-up/</id>
+    <content src="/posts/level-up/" />
     <author>
       <name></name>
     </author>
 
   
     
-    <category term="CTF" />
-    
-    <category term="Vulnhub" />
+    <category term="Tips" />
     
   
 
@@ -183,24 +223,19 @@ alias egrep='egrep --color...
 
 
 
-      This is a challenge writeup on my blog to sharpen my markdown skillz and figure out a nice template going forward! 
-A nice ez box to start with :D
+      This is just some key things that I found helped me on my quest.
 
-Name: Kioptrix: Level 1 (#1)
+“Minimize, Systemize, Automize” 
 
-Date release: 17 Feb 2010
 
-Author: Kioptrix
+Touch Typing
 
-Series: Kioptrix
+The faster and better you type the more productive u can be and dump your bran quicker. Spend 15mins daily and master it
 
-Web page: http://www.kioptrix.com/blog/?page_id=135
+Lean to Code
 
-Vulnhub URL: https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
-
-Description:
-
-This Kioptrix VM Image...
+bash, powershell, python, javascript ..watever find one and learn it. this has helped me loads. 
+automate repeated boring stuff with scripts so u ...
     </summary>
   
 

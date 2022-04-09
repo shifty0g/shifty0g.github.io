@@ -3,12 +3,6 @@ https://shifty0g.github.io/
 https://github.com/shifty0g/shifty0g.github.io
 
 
-FOCUS:  
-    Add 5 new posts
-    Imrpove the Quality of old ones 
-    Make a cool avatar
-
-
 # Preview 
 
 # Build 
@@ -22,6 +16,9 @@ FOCUS:
 Jekyll
 https://jekyllrb.com/docs/liquid/tags/#linking-to-posts
 https://jekyllrb.com/docs/posts/
+
+https://github.com/planetjekyll/awesome-jekyll-plugins
+
 
 Chirpy Theme 
 https://chirpy.cotes.page/
@@ -51,25 +48,39 @@ https://ezgif.com/resize
 
 
 
+
 ======================
-TO DO 
+TO DO / IDEAS
 ======================
 
-fix the conflfict page 
+Add 5 new posts
 
 port everything across and post the blog
 
+get rid of all the extra crap at the bottom of a blog post - comments, share, furter reading, post is licencd 
+
+Imrpove the Quality of old ones 
+
+Make a cool avatar
+
 sort out all extra spacing in the theme 
+
+quality - try add images and other cool md stuff to posts so not just a wall of text 
 
 backup, build and update scripts
 
-add in logo UK 
+add in location UK 
 
-get rid of all the extra crap at the bottom of a blog post - comments, share, furter reading, post is licencd 
+new css file runs after everything that does customization
+    change font under avatar
+    sidebars diff colour
+    diff fount for titles 
+
 
 make logo
-
 make logo on side show bigger  on the side bare
+
+make my username look cool 
 
 move the link icons on siebar up and centre?
 
@@ -87,3 +98,7 @@ add more picutes and look better
 
 try and get left sidebar on homepage to list categories or something 
 
+update tools on github and add screnshots
+
+
+have a script that will create the projects page... somehow adds the readme about section for each of my tools 
