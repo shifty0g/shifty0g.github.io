@@ -1,0 +1,211 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>@shifty0g</title>
+  <subtitle></subtitle>
+  <updated>2022-04-09T09:50:18+01:00</updated>
+  <author>
+    <name></name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <rights> © 2022  </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Toolbox</title>
+    <link href="http://localhost:4000/posts/toolbox/" rel="alternate" type="text/html" title="Toolbox" />
+    <published>2022-04-03T13:55:00+01:00</published>
+  
+    <updated>2022-04-03T13:55:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/toolbox/</id>
+    <content src="http://localhost:4000/posts/toolbox/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="cheatsheets" />
+    
+    <category term="toolbox" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Here i will share the tools i use on a day to day basis and make my life easier.
+
+I will try and limit this to stuff i think is really worth taklking about. Everything else check out My Github Stars
+
+Windows
+
+Mobaxterm
+
+This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can spin up a number of services quickly  web, ftp, smb…est
+
+http...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>So I actually found a bug in the wild (XSS)</title>
+    <link href="http://localhost:4000/posts/xss-bug-writeup/" rel="alternate" type="text/html" title="So I actually found a bug in the wild (XSS)" />
+    <published>2022-01-22T13:55:00+01:00</published>
+  
+    <updated>2022-01-22T13:55:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/xss-bug-writeup/</id>
+    <content src="http://localhost:4000/posts/xss-bug-writeup/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="writeup" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Yep i Finally found one
+
+I found Stored XSS on bzscan and it wasnt on purpose. :laughing:
+
+So i was on a testing some front end webappp which uses the binance smart chain
+
+….im still writing this up
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Bash Tricks</title>
+    <link href="http://localhost:4000/posts/bash-tricks/" rel="alternate" type="text/html" title="Bash Tricks" />
+    <published>2022-01-22T13:55:00+01:00</published>
+  
+    <updated>2022-01-22T13:55:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/bash-tricks/</id>
+    <content src="http://localhost:4000/posts/bash-tricks/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      So here is a collections of bits I have in my .zshrc (yes im a zsh guy)
+
+To install or use most of these can be added into .bashrc or .zshrc file providing you have the tool setup correctly.
+
+I will keep adding cool bits to this list overtime.
+
+enjoy :)
+
+grep
+
+some day to day greps that always useful to keep at the ready.
+
+# colored grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kioptrix Level 1</title>
+    <link href="http://localhost:4000/posts/kioptrix-level-1/" rel="alternate" type="text/html" title="Kioptrix Level 1" />
+    <published>2017-02-17T13:52:16+01:00</published>
+  
+    <updated>2017-02-17T13:52:16+01:00</updated>
+  
+    <id>http://localhost:4000/posts/kioptrix-level-1/</id>
+    <content src="http://localhost:4000/posts/kioptrix-level-1/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="CTF" />
+    
+    <category term="Vulnhub" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      This is a challenge writeup on my blog to sharpen my markdown skillz and figure out a nice template going forward! 
+A nice ez box to start with :D
+
+Name: Kioptrix: Level 1 (#1)
+
+Date release: 17 Feb 2010
+
+Author: Kioptrix
+
+Series: Kioptrix
+
+Web page: http://www.kioptrix.com/blog/?page_id=135
+
+Vulnhub URL: https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
+
+Description:
+
+This Kioptrix VM Image...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
