@@ -13,6 +13,8 @@ const resource = [
   
     '/categories/',
   
+    '/tags/',
+  
     '/archives/',
   
     '/whoami/',

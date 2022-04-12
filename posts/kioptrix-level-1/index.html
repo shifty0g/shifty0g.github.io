@@ -154,8 +154,7 @@
     </div>
     <div class="site-subtitle font-italic"></div>
 
-  </div>
-<!-- .profile-wrapper -->
+  </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
 
@@ -174,6 +173,15 @@
         
 
         <span>CATEGORIES</span>
+      </a>
+    </li> <!-- .nav-item -->
+    
+    <li class="nav-item">
+      <a href="/tags/" class="nav-link">
+        <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
+        
+
+        <span>TAGS</span>
       </a>
     </li> <!-- .nav-item -->
     
@@ -215,7 +223,8 @@
       
 
       
-      <a href="https://github.com/shifty0g" aria-label="github" target="_blank" rel="noopener">
+      <a href="https://github.com/shifty0g" aria-label="github"
+        target="_blank" rel="noopener">
         <i class="fab fa-github"></i>
       </a>
       
@@ -224,7 +233,8 @@
       
 
       
-      <a href="https://twitter.com/shifty0g" aria-label="twitter" target="_blank" rel="noopener">
+      <a href="https://twitter.com/shifty0g" aria-label="twitter"
+        target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
       
@@ -288,9 +298,10 @@
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search...">
+      <input class="form-control" id="search-input" type="search"
+        aria-label="search" autocomplete="off" placeholder="Search...">
     </span>
-    <span id="search-cancel">Cancel</span>
+    <span id="search-cancel" >Cancel</span>
   </div>
 
 </div>
@@ -1172,7 +1183,12 @@
   See: ${JS_ROOT}/utils/timeago.js
 -->
 
-<em class="timeago" data-ts="1487335936" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll">
+<em class="timeago"
+    data-ts="1487335936"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
   2017-02-17
 </em>
 
@@ -1217,68 +1233,49 @@ A nice ez box to start with :D</p>
 <p>This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games are to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways then one to successfully complete the challenges.</p>
 
 <!-- more -->
-<h2 id="port-scanning">
-<span class="mr-2">Port Scanning</span><a href="#port-scanning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h2>
+<h2 id="port-scanning"><span class="mr-2">Port Scanning</span><a href="#port-scanning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<h3 id="tcp">
-<span class="mr-2">TCP</span><a href="#tcp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
+<h3 id="tcp"><span class="mr-2">TCP</span><a href="#tcp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <p><code class="language-plaintext highlighter-rouge">nmap -sS -n -oN 192.168.0.23.quick.nmap 192.168.0.23</code></p>
 
-<div class="language-console highlighter-rouge">
-<div class="code-header">
+<div class="language-console highlighter-rouge"><div class="code-header">
         <span data-label-text="Console"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td>
-<td class="rouge-code"><pre><span class="go">PORT     STATE SERVICE     REASON         VERSION
+</pre></td><td class="rouge-code"><pre><span class="go">PORT     STATE SERVICE     REASON         VERSION
 22/tcp   open  ssh         syn-ack ttl 64 OpenSSH 2.9p2 (protocol 1.99)
 80/tcp   open  http        syn-ack ttl 64 Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
 139/tcp  open  netbios-ssn syn-ack ttl 64 Samba smbd (workgroup: MYGROUP)
 443/tcp  open  ssl/http    syn-ack ttl 64 Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
-</span></pre></td>
-</tr></tbody></table></code></div>
-</div>
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p><img data-src="/assets/images/kioptrix1/1.png" alt="alt text" data-proofer-ignore></p>
 
-<h3 id="udp">
-<span class="mr-2">UDP</span><a href="#udp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
+<h3 id="udp"><span class="mr-2">UDP</span><a href="#udp" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <p>Decided to mix it up and use unicorncan here.</p>
 
 <p><code class="language-plaintext highlighter-rouge">unicornscan -mU -r200-Iv -p 0-65535 -l 192.168.0.23_udp.unicorn 192.168.0.23</code></p>
 
-<p><img data-src="/assets/images/kioptrix1/2.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/2.png" alt="alt text" data-proofer-ignore></p>
 
 <p><img data-src="/assets/kioptrix1/2.png" alt="alt text" data-proofer-ignore></p>
 
-<p><img data-src="/assets/images/kioptrix1/2.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/2.png" alt="alt text" data-proofer-ignore></p>
 
-<h2 id="service-enumeration">
-<span class="mr-2">Service Enumeration</span><a href="#service-enumeration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h2>
+<h2 id="service-enumeration"><span class="mr-2">Service Enumeration</span><a href="#service-enumeration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<h3 id="22---ssh">
-<span class="mr-2">22 - ssh</span><a href="#22---ssh" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
+<h3 id="22---ssh"><span class="mr-2">22 - ssh</span><a href="#22---ssh" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <p><code class="language-plaintext highlighter-rouge">ssh 192.168.0.23</code></p>
 
 <p>Not that easy. Default and silly credentials didnt work here (root:root, est)</p>
 
-<h3 id="80---http">
-<span class="mr-2">80 - http</span><a href="#80---http" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
+<h3 id="80---http"><span class="mr-2">80 - http</span><a href="#80---http" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <p>http://192.168.0.23</p>
 
@@ -1290,13 +1287,9 @@ A nice ez box to start with :D</p>
 
 <p><code class="language-plaintext highlighter-rouge">dirb http://192.168.0.23</code></p>
 
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
+<div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1306,8 +1299,7 @@ A nice ez box to start with :D</p>
 8
 9
 10
-</pre></td>
-<td class="rouge-code"><pre>Server: Apache/1.3.20 <span class="o">(</span>Unix<span class="o">)</span>  <span class="o">(</span>Red-Hat/Linux<span class="o">)</span> mod_ssl/2.8.4 OpenSSL/0.9.6b
+</pre></td><td class="rouge-code"><pre>Server: Apache/1.3.20 <span class="o">(</span>Unix<span class="o">)</span>  <span class="o">(</span>Red-Hat/Linux<span class="o">)</span> mod_ssl/2.8.4 OpenSSL/0.9.6b
 /test.php
 Allowed HTTP Methods: GET, HEAD, OPTIONS, TRACE 
 OSVDB-877: HTTP TRACE method is active, suggesting the host is vulnerable to XST
@@ -1317,42 +1309,29 @@ OSVDB-3092: /manual/: Web server manual found.
 OSVDB-3268: /icons/: Directory indexing found.
 OSVDB-3233: /icons/README: Apache default file found.
 OSVDB-3092: /test.php: This might be interesting...
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
+</pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="139---netbios">
-<span class="mr-2">139 - netbios</span><a href="#139---netbios" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
+<h3 id="139---netbios"><span class="mr-2">139 - netbios</span><a href="#139---netbios" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
 
 <p><code class="language-plaintext highlighter-rouge">enum4linux 192.168.0.23 &gt; enum4linux_192.168.0.23</code></p>
 
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
+<div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td>
-<td class="rouge-code"><pre>KIOPTRIX       Wk Sv PrQ Unx NT SNT Samba Server
+</pre></td><td class="rouge-code"><pre>KIOPTRIX       Wk Sv PrQ Unx NT SNT Samba Server
 
 <span class="nv">Domain</span><span class="o">=[</span>MYGROUP] <span class="nv">OS</span><span class="o">=[</span>Unix] <span class="nv">Server</span><span class="o">=[</span>Samba 2.2.1a]
 
 //192.168.0.23/IPC<span class="nv">$	</span><span class="o">[</span>E] Can<span class="s1">'t understand response:
 //192.168.0.23/ADMIN$	[E] Can'</span>t understand response:
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
+</pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="exploitation">
-<span class="mr-2">Exploitation</span><a href="#exploitation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h2>
+<h2 id="exploitation"><span class="mr-2">Exploitation</span><a href="#exploitation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <p><strong>Exploit used:</strong> <a href="https://www.exploit-db.com/exploits/10/">https://www.exploit-db.com/exploits/10/</a></p>
 
@@ -1362,21 +1341,21 @@ OSVDB-3092: /test.php: This might be interesting...
 
 <p>The exploit was downloaded and compiled</p>
 
-<p><img data-src="/assets/images/kioptrix1/4.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/4.png" alt="alt text" data-proofer-ignore></p>
 
 <p>Started a netcat listener on port 4444</p>
 
-<p><img data-src="/assets/images/kioptrix1/5.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/5.png" alt="alt text" data-proofer-ignore></p>
 
 <p>Run the exploit</p>
 
-<p><img data-src="/assets/images/kioptrix1/6.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/6.png" alt="alt text" data-proofer-ignore></p>
 
 <p>Get root shell on the target!😎😎😎</p>
 
 <p>From here we can get a tty and read the flag</p>
 
-<p><img data-src="/assets/images/kioptrix1/end.png" alt="alt text" data-proofer-ignore></p>
+<p><img data-src="/assets/kioptrix1/end.png" alt="alt text" data-proofer-ignore></p>
 
 </div>
 
@@ -1387,8 +1366,8 @@ OSVDB-3092: /test.php: This might be interesting...
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href="/categories/ctf/">CTF</a>,
-      <a href="/categories/vulnhub/">Vulnhub</a>
+      <a href='/categories/ctf/'>CTF</a>,
+      <a href='/categories/vulnhub/'>Vulnhub</a>
   </div>
   
 
@@ -1397,20 +1376,20 @@ OSVDB-3092: /test.php: This might be interesting...
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/ctf/" class="post-tag no-text-decoration">CTF</a>
+      <a href="/tags/ctf/"
+          class="post-tag no-text-decoration" >CTF</a>
       
-      <a href="/tags/vulnhub/" class="post-tag no-text-decoration">Vulnhub</a>
+      <a href="/tags/vulnhub/"
+          class="post-tag no-text-decoration" >Vulnhub</a>
       
   </div>
   
 
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
-  </div>
-<!-- .post-tail-bottom -->
+  </div><!-- .post-tail-bottom -->
 
-</div>
-<!-- div.post-tail-wrapper -->
+</div><!-- div.post-tail-wrapper -->
 
 
       
@@ -1490,12 +1469,80 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1555,36 +1602,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1622,8 +1639,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-    
-      
     
   
     
@@ -1670,8 +1685,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-      
-    
   
     
     
@@ -1695,62 +1708,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1785,8 +1742,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-      
-    
   
     
     
@@ -1810,8 +1765,6 @@ OSVDB-3092: /test.php: This might be interesting...
     
     
     
-    
-      
     
   
     
@@ -1840,6 +1793,12 @@ OSVDB-3092: /test.php: This might be interesting...
       <a class="post-tag" href="/tags/ctf/">CTF</a>
     
       
+      <a class="post-tag" href="/tags/vulnhub/">Vulnhub</a>
+    
+      
+      <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">Linux</a>
     
       
@@ -1849,16 +1808,10 @@ OSVDB-3092: /test.php: This might be interesting...
       <a class="post-tag" href="/tags/cheatsheet/">Cheatsheet</a>
     
       
-      <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
-    
-      
       <a class="post-tag" href="/tags/tips/">Tips</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
-    
-      
-      <a class="post-tag" href="/tags/vulnhub/">Vulnhub</a>
     
       
       <a class="post-tag" href="/tags/webapp/">WebApp</a>
@@ -2001,6 +1954,71 @@ OSVDB-3092: /test.php: This might be interesting...
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -2013,49 +2031,31 @@ OSVDB-3092: /test.php: This might be interesting...
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-          
-
-
-
 
 
   <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
-    <h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3>
+    <h3 class="pt-2 mt-1 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
     
       
       
       <div class="card">
-        <a href="/posts/htb-writeup-heist/">
+        <a href="/posts/kioptrix-level-3/">
           <div class="card-body">
             <!--
   Date format snippet
   See: ${JS_ROOT}/utils/timeago.js
 -->
 
-<em class="timeago small" data-ts="1575068400">
-  2019-11-30
+<em class="timeago small"
+    data-ts="1489236736"
+    
+    >
+  2017-03-11
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Heist - Hack The Box</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Kioptrix Level 1.2 (#3) - Vulnhub</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2066,7 +2066,17 @@ OSVDB-3092: /test.php: This might be interesting...
 
                 
 
-Heist starts off with a support page with a username and a Cisco IOS config file containing hashed &amp;amp; encrypted passwords. After cracking two passwords from the config file and getting access ...
+Name: Kioptrix: Level 1.2 (#3)
+
+Date release: 18 Apr 2011
+
+Author: Kioptrix
+
+Series: Kioptrix
+
+Web page: http://www.kioptrix.com/blog/?p=358
+
+Vulnhub: https://www.vulnhub.com/entry/kioptrix-level...
               </p>
             </div>
           </div>
@@ -2076,18 +2086,21 @@ Heist starts off with a support page with a username and a Cisco IOS config file
       
       
       <div class="card">
-        <a href="/posts/toolbox/">
+        <a href="/posts/kioptrix-level-4/">
           <div class="card-body">
             <!--
   Date format snippet
   See: ${JS_ROOT}/utils/timeago.js
 -->
 
-<em class="timeago small" data-ts="1648990500">
-  2022-04-03
+<em class="timeago small"
+    data-ts="1489582336"
+    
+    >
+  2017-03-15
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Toolbox</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Kioptrix Level 1.3 (#4) - Vulnhub</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2096,9 +2109,19 @@ Heist starts off with a support page with a username and a Cisco IOS config file
 
 
 
-                Here i will share the tools i use on a day to day basis and make my life easier.
+                
 
-I will try and limit this to stuff i think is really worth taklking about. Everything else check out My Github Star...
+Name: Kioptrix: Level 1.3 (#4)
+
+Date release: 8 Feb 2012
+
+Author: Kioptrix
+
+Series: Kioptrix
+
+Web page: http://www.kioptrix.com/blog/?p=604
+
+Vulnhub: https://www.vulnhub.com/entry/kioptrix-level-...
               </p>
             </div>
           </div>
@@ -2108,18 +2131,21 @@ I will try and limit this to stuff i think is really worth taklking about. Every
       
       
       <div class="card">
-        <a href="/posts/xss-bug-writeup/">
+        <a href="/posts/kioptrix-2014/">
           <div class="card-body">
             <!--
   Date format snippet
   See: ${JS_ROOT}/utils/timeago.js
 -->
 
-<em class="timeago small" data-ts="1642856100">
-  2022-01-22
+<em class="timeago small"
+    data-ts="1489841536"
+    
+    >
+  2017-03-18
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>So I actually found a bug in the wild (XSS)</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Kioptrix Level 2014 - Vulnhub</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2128,12 +2154,19 @@ I will try and limit this to stuff i think is really worth taklking about. Every
 
 
 
-                Yep i Finally found one. 
-I found Stored XSS on bzscan and it wasnt on purpose. <img class="emoji" title=":laughing:" alt=":laughing:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png" height="20" width="20">
+                
 
-So a while ago was on a testing some front end webappp which uses the Binance Smart Chain
+Name: Kioptrix: 2014 (#5)
 
-It was possibl...
+Date release: 6 Apr 2014
+
+Author: Kioptrix
+
+Series: Kioptrix
+
+Web page: http://www.kioptrix.com/blog/a-new-vm-after-almost-2-years/
+
+Vulnhub: https://www.vulnhub.com/en...
               </p>
             </div>
           </div>
@@ -2152,14 +2185,16 @@ It was possibl...
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <span class="btn btn-outline-primary disabled" prompt="Older">
+  <span class="btn btn-outline-primary disabled"
+    prompt="Older">
     <p>-</p>
   </span>
   
 
   
-  <a href="/posts/htb-writeup-heist/" class="btn btn-outline-primary" prompt="Newer">
-    <p>Heist - Hack The Box</p>
+  <a href="/posts/kioptrix-level-2/" class="btn btn-outline-primary"
+    prompt="Newer">
+    <p>Kioptrix Level 1.1 (#2) - Vulnhub</p>
   </a>
   
 
@@ -2211,10 +2246,10 @@ It was possibl...
     </div>
 
   </div> <!-- div.d-flex -->
+</footer>
 
 
-
-      
+      </div>
 
       <!--
   The Search results
@@ -2272,12 +2307,80 @@ It was possibl...
     
     
     
-      
+  
+    
+    
+    
     
   
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2337,36 +2440,6 @@ It was possibl...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2404,8 +2477,6 @@ It was possibl...
     
     
     
-    
-      
     
   
     
@@ -2452,8 +2523,6 @@ It was possibl...
     
     
     
-      
-    
   
     
     
@@ -2477,62 +2546,6 @@ It was possibl...
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2567,8 +2580,6 @@ It was possibl...
     
     
     
-      
-    
   
     
     
@@ -2592,8 +2603,6 @@ It was possibl...
     
     
     
-    
-      
     
   
     
@@ -2622,6 +2631,12 @@ It was possibl...
       <a class="post-tag" href="/tags/ctf/">CTF</a>
     
       
+      <a class="post-tag" href="/tags/vulnhub/">Vulnhub</a>
+    
+      
+      <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">Linux</a>
     
       
@@ -2631,16 +2646,10 @@ It was possibl...
       <a class="post-tag" href="/tags/cheatsheet/">Cheatsheet</a>
     
       
-      <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
-    
-      
       <a class="post-tag" href="/tags/tips/">Tips</a>
     
       
       <a class="post-tag" href="/tags/tools/">Tools</a>
-    
-      
-      <a class="post-tag" href="/tags/vulnhub/">Vulnhub</a>
     
       
       <a class="post-tag" href="/tags/webapp/">WebApp</a>
@@ -2659,7 +2668,7 @@ It was possibl...
 </div>
 
 
-     <!-- #main-wrapper -->
+    </div> <!-- #main-wrapper -->
 
     
 
