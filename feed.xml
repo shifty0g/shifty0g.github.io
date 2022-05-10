@@ -4,7 +4,7 @@
   <id>/</id>
   <title>@shifty0g</title>
   <subtitle></subtitle>
-  <updated>2022-04-12T18:42:10+01:00</updated>
+  <updated>2022-05-10T11:28:25+01:00</updated>
   <author>
     <name></name>
     <uri>/</uri>
@@ -48,17 +48,65 @@
 
 
 
-      Here i will share the tools i use on a day to day basis and make my life easier.
+      This will be a growing list of the tools that have made my life easier and hopefully wil do the same for you.
 
-I will try and limit this to stuff i think is really worth taklking about. Everything else check out My Github Stars
+I will try and limit this list to the best of the best. Everything else check out My Github Stars List there is loads on there
 
 Windows
 
 Mobaxterm
 
-This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can spin up a number of services quickly  web, ftp, smb…est
+This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can spin up a number of se...
+    </summary>
+  
 
-http...
+  </entry>
+
+  
+  <entry>
+    <title>Learn the HotKeys</title>
+    <link href="/posts/HotKeys/" rel="alternate" type="text/html" title="Learn the HotKeys" />
+    <published>2022-01-22T13:55:00+01:00</published>
+  
+    <updated>2022-01-22T13:55:00+01:00</updated>
+  
+    <id>/posts/HotKeys/</id>
+    <content src="/posts/HotKeys/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="Cheatsheet" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      As with all posts this will be a growing WIP as and when.
+
+You should learn hotkeys for the stuff you use day to day using a mouse is slow and even worse on a laptop touch pads are painful.  Here are some resources for hotkeys.
+
+Windows
+
+Windows keyboard Shortcuts
+
+Kali
+
+Creating Custom Kali Hotkeys
+
+# Using the stock QT terminal with Kali
+# Terminal
+
+CTRL + ALT + T      New Termianl  Window
+CT...
     </summary>
   
 
@@ -133,19 +181,29 @@ Payload: &amp;lt;ma...
 
 
 
-      will share some cool stuff i have done to my zsh
+      I have alwasy been a bash guy …until i found out about zsh. zsh seems to take bash to the next level and just makes my life easier. Here i will share all cool things zsh
 
-to install most of these . stick in .zshrc
+To install most of these . stick in .zshrc
 
-My Prompt
+subl /root/.zsrc
 
-Here is my colourful PS1. i like this one it gives me the key info i want to see and I can copy the command i ran along with the time and date from the shell into my notes
+My ZSH Prompt
 
 
 
-Jekyll dont like it in a code block so grab it from HERE
+I have stuck this under its own github repo
 
-To install replace the $PROMPT varaiable in your .zshrc the...
+https://github.com/shifty0g/zsh-prompt
+
+ZSH plugins
+
+
+  fzf
+  zsh-completeions
+  zsh-autocomplete
+
+
+Bi...
     </summary>
   
 
@@ -192,52 +250,6 @@ enjoy
 grep
 
 some day to day greps that always useful to...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Level Up your Game!</title>
-    <link href="/posts/level-up/" rel="alternate" type="text/html" title="Level Up your Game!" />
-    <published>2022-01-13T00:00:00+01:00</published>
-  
-    <updated>2022-01-13T00:00:00+01:00</updated>
-  
-    <id>/posts/level-up/</id>
-    <content src="/posts/level-up/" />
-    <author>
-      <name></name>
-    </author>
-
-  
-    
-    <category term="Tips" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This is just some key things that I found helped me on my quest.
-
-“Minimize, Systemize, Automize” 
-
-
-Touch Typing
-
-The faster and better you type the more productive u can be and dump your bran quicker. Spend 15mins daily and master it
-
-Lean to Code
-
-bash, powershell, python, javascript ..watever find one and learn it. this has helped me loads. 
-automate repeated boring stuff with scripts so u ...
     </summary>
   
 
