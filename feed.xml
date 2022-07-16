@@ -4,7 +4,7 @@
   <id>/</id>
   <title>@shifty0g</title>
   <subtitle></subtitle>
-  <updated>2022-05-10T11:28:25+01:00</updated>
+  <updated>2022-07-16T18:25:41+01:00</updated>
   <author>
     <name></name>
     <uri>/</uri>
@@ -52,11 +52,13 @@
 
 I will try and limit this list to the best of the best. Everything else check out My Github Stars List there is loads on there
 
+&amp;lt;/br&amp;gt;
+
 Windows
 
-Mobaxterm
 
-This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can spin up a number of se...
+  
+    Mobaxterm - This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can ...
     </summary>
   
 
@@ -102,11 +104,12 @@ Kali
 
 Creating Custom Kali Hotkeys
 
-# Using the stock QT terminal with Kali
-# Terminal
 
-CTRL + ALT + T      New Termianl  Window
-CT...
+	Hotkeys
+
+```
+New Termianl  Window		CTRL + ALT + T      
+New Tab                     CTRL + SH...
     </summary>
   
 
@@ -155,62 +158,6 @@ Payload: &amp;lt;ma...
 
   
   <entry>
-    <title>ZSH Stuff</title>
-    <link href="/posts/zsh/" rel="alternate" type="text/html" title="ZSH Stuff" />
-    <published>2022-01-22T13:55:00+01:00</published>
-  
-    <updated>2022-01-22T13:55:00+01:00</updated>
-  
-    <id>/posts/zsh/</id>
-    <content src="/posts/zsh/" />
-    <author>
-      <name></name>
-    </author>
-
-  
-    
-    <category term="Cheatsheet" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      I have alwasy been a bash guy …until i found out about zsh. zsh seems to take bash to the next level and just makes my life easier. Here i will share all cool things zsh
-
-To install most of these . stick in .zshrc
-
-subl /root/.zsrc
-
-My ZSH Prompt
-
-
-
-I have stuck this under its own github repo
-
-https://github.com/shifty0g/zsh-prompt
-
-ZSH plugins
-
-
-  fzf
-  zsh-completeions
-  zsh-autocomplete
-
-
-Bi...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
     <title>Linux Magic</title>
     <link href="/posts/linux-magic/" rel="alternate" type="text/html" title="Linux Magic" />
     <published>2022-01-22T13:55:00+01:00</published>
@@ -250,6 +197,52 @@ enjoy
 grep
 
 some day to day greps that always useful to...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Level Up your Game!</title>
+    <link href="/posts/level-up/" rel="alternate" type="text/html" title="Level Up your Game!" />
+    <published>2022-01-13T00:00:00+01:00</published>
+  
+    <updated>2022-01-13T00:00:00+01:00</updated>
+  
+    <id>/posts/level-up/</id>
+    <content src="/posts/level-up/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="Tips" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      This is where I dump my rambles and serves mainly as a page for me to read now and then reminding me of things as I try to level up on my quest.
+
+
+“Minimize, Systemize, Automize” 
+
+
+Touch Typing
+
+The faster and better you type with less mistakes the more productive u can be and dump your brain quicker. Spend 15mins daily and master it
+
+Lean to Code
+
+bash, powershell, python, javascript ..wateve...
     </summary>
   
 

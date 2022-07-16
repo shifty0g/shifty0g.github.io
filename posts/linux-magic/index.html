@@ -505,42 +505,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -694,31 +658,6 @@
 <span class="mr-2">nmap</span><a href="#nmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
 </h2>
 
-<h3 id="coloured-nmap-output">
-<span class="mr-2">Coloured nmap output</span><a href="#coloured-nmap-output" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
-
-<p>make nmap look pretty and colourful.</p>
-
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td>
-<td class="rouge-code"><pre><span class="c"># install grc</span>
-<span class="nb">sudo </span>apt-get <span class="nb">install </span>grc
-<span class="c"># create a new alias for nmap </span>
-<span class="nb">alias </span><span class="nv">nmap</span><span class="o">=</span><span class="s2">"grc nmap"</span> <span class="c"># this doesnt play ball with autocomplete on zsh so </span>
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
-
 <h3 id="list-out-the-nmap-scripts">
 <span class="mr-2">list out the nmap scripts</span><a href="#list-out-the-nmap-scripts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
 </h3>
@@ -794,6 +733,10 @@
 23
 24
 25
+26
+27
+28
+29
 </pre></td>
 <td class="rouge-code"><pre><span class="c"># host discovery</span>
 <span class="nb">alias </span>nmap-ping<span class="o">=</span><span class="s1">'sudo nmap -sP -v -n -oA nmap_ping $1'</span>
@@ -820,22 +763,9 @@
 <span class="c"># nmap - deeper scripts</span>
 <span class="nb">alias </span>nmap-tcp-def-script-vuln-unsafe<span class="o">=</span><span class="s1">'nmap -sSV ---script exploit,vuln --script-args=unsafe=1 -oA nmap_tcp_script-vuln-unsafe $1'</span>
 <span class="nb">alias </span>nmap-tcp-fast-script-heavy-unsafe<span class="o">=</span><span class="s1">'nmap -sSV -F --script vuln,brute,exploit,intrusive,fuzzer --script-args=unsafe=1 -oA nmap_tcp_script-heavy-unsafe $1'</span>
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
 
-<p>Useage examples:</p>
-
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td>
-<td class="rouge-code"><pre>nmap-tcp-full	192.168.1.1/24
+<span class="c"># Useage  examples:</span>
+nmap-tcp-full	192.168.1.1/24
 nmap-udp-def	192.168.1.2
 </pre></td>
 </tr></tbody></table></code></div>
@@ -853,9 +783,11 @@ nmap-udp-def	192.168.1.2
 <div class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
+3
 </pre></td>
 <td class="rouge-code"><pre><span class="c"># update metasploit **BE CAREFUL**</span>
 <span class="nb">alias </span>m-update<span class="o">=</span><span class="s1">'apt update; apt install metasploit-framework'</span>
+<span class="nb">alias </span><span class="nv">msf</span><span class="o">=</span><span class="s1">'service postgres start; msfconsole'</span>
 </pre></td>
 </tr></tbody></table></code></div>
 </div>
@@ -995,86 +927,7 @@ nmap <span class="nt">--iflist</span>		       | <span class="nb">tee</span> <spa
 <span class="mr-2">loopage</span><a href="#loopage" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
 </h2>
 
-<p>some tools dont take input from a file with others taking it and mushing it into a single file. <a href="https://man7.org/linux/man-pages/man1/xargs.1.html">xargs</a> and <a href="https://www.gnu.org/software/parallel/">parallels</a> can be used to solve this.</p>
-
-<p>say you get a file of  urls - urls.txt and you want to run nikto on them</p>
-
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td>
-<td class="rouge-code"><pre><span class="nb">cat </span>urls.txt
-https://www.google.co.uk
-http://192.168.1.2/
-https://dangerousserver:80
-https://pen-isalnd.xyz
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
-<h3 id="parrallels">
-<span class="mr-2">parrallels</span><a href="#parrallels" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
-
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td>
-<td class="rouge-code"><pre>parallel <span class="nt">--bar</span> <span class="nt">--eta</span> <span class="nt">-a</span> web-urls.txt <span class="s1">'nikto -C all -h {} | tee nikto_$(echo {}| cut -d'</span>/<span class="s1">' -f3 | tr -d ^ | tr % - | tr : -).txt
-</span></pre></td>
-</tr></tbody></table></code></div>
-</div>
-
-<h3 id="xargs">
-<span class="mr-2">xargs</span><a href="#xargs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>
-</h3>
-
-<div class="language-bash highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td>
-<td class="rouge-code"><pre><span class="nb">cat </span>urls.txt | xargs bash <span class="nt">-c</span> <span class="s1">'nikto -C all -h $@ | tee nikto_$(echo $@ | cut -d'</span>/<span class="s1">' -f3 | tr -d ^ | tr % - | tr : -).txt'</span> bash
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
-
-<p>this will give you nice output</p>
-
-<div class="language-plaintext highlighter-rouge">
-<div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button>
-</div>
-<div class="highlight"><code><table class="rouge-table"><tbody><tr>
-<td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td>
-<td class="rouge-code"><pre>nikto_192.168.1.2.txt
-nikto_dangerousserver-80.txt
-nikto_pen-isalnd.xyz.txt
-nikto_www.google.co.uk.txt
-</pre></td>
-</tr></tbody></table></code></div>
-</div>
-
-<p>Out of the 2 i find parrallels better it has more features and can run more than 1 job at a time controlling jobs up with <code class="language-plaintext highlighter-rouge">-j X</code></p>
+<p>Moved this over to a seperate post - see [Loopage])(add link)</p>
 
 
 </div>
@@ -1251,42 +1104,6 @@ nikto_www.google.co.uk.txt
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
       
         
         
@@ -1376,6 +1193,48 @@ nikto_www.google.co.uk.txt
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1421,6 +1280,8 @@ nikto_www.google.co.uk.txt
     
     
     
+      
+    
   
     
     
@@ -1472,6 +1333,8 @@ nikto_www.google.co.uk.txt
     
     
     
+    
+      
     
   
     
@@ -1518,9 +1381,6 @@ nikto_www.google.co.uk.txt
       <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
     
       
-      <a class="post-tag" href="/tags/linux/">Linux</a>
-    
-      
       <a class="post-tag" href="/tags/bug-bounty/">Bug-Bounty</a>
     
       
@@ -1528,6 +1388,9 @@ nikto_www.google.co.uk.txt
     
       
       <a class="post-tag" href="/tags/hotkeys/">HotKeys</a>
+    
+      
+      <a class="post-tag" href="/tags/linux/">Linux</a>
     
       
       <a class="post-tag" href="/tags/tips/">Tips</a>
@@ -1590,19 +1453,6 @@ nikto_www.google.co.uk.txt
 
 
 
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 
   
@@ -1763,43 +1613,35 @@ nikto_www.google.co.uk.txt
 
 
 
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+        
+        
+        
+          
+
+
+
 
 
   <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
     <h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
-    
-      
-      
-      <div class="card">
-        <a href="/posts/zsh/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small" data-ts="1642856100">
-  2022-01-22
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>ZSH Stuff</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                I have alwasy been a bash guy …until i found out about zsh. zsh seems to take bash to the next level and just makes my life easier. Here i will share all cool things zsh
-
-To install most of these ....
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
     
       
       
@@ -1865,6 +1707,41 @@ I will try and limit this list to the best of the best. Everything else check ou
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/xss-bug-writeup/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small" data-ts="1642856100">
+  2022-01-22
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>So I actually found a bug in the wild (XSS)</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Yep i Finally found one. 
+I found Stored XSS on bzscan and it wasnt on purpose. <img class="emoji" title=":laughing:" alt=":laughing:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png" height="20" width="20">
+
+So a while ago was on a testing some front end webappp which uses the Binance Smart Chain
+
+It was possibl...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1883,8 +1760,8 @@ I will try and limit this list to the best of the best. Everything else check ou
   
 
   
-  <a href="/posts/zsh/" class="btn btn-outline-primary" prompt="Newer">
-    <p>ZSH Stuff</p>
+  <a href="/posts/xss-bug-writeup/" class="btn btn-outline-primary" prompt="Newer">
+    <p>So I actually found a bug in the wild (XSS)</p>
   </a>
   
 
@@ -1899,6 +1776,7 @@ I will try and limit this list to the best of the best. Everything else check ou
     </div>
   </div>
 </div> <!-- .row -->
+
 
 
 
@@ -2060,42 +1938,6 @@ I will try and limit this list to the best of the best. Everything else check ou
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
       
         
         
@@ -2185,6 +2027,48 @@ I will try and limit this list to the best of the best. Everything else check ou
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2230,6 +2114,8 @@ I will try and limit this list to the best of the best. Everything else check ou
     
     
     
+      
+    
   
     
     
@@ -2281,6 +2167,8 @@ I will try and limit this list to the best of the best. Everything else check ou
     
     
     
+    
+      
     
   
     
@@ -2327,9 +2215,6 @@ I will try and limit this list to the best of the best. Everything else check ou
       <a class="post-tag" href="/tags/hackthebox/">HackTheBox</a>
     
       
-      <a class="post-tag" href="/tags/linux/">Linux</a>
-    
-      
       <a class="post-tag" href="/tags/bug-bounty/">Bug-Bounty</a>
     
       
@@ -2337,6 +2222,9 @@ I will try and limit this list to the best of the best. Everything else check ou
     
       
       <a class="post-tag" href="/tags/hotkeys/">HotKeys</a>
+    
+      
+      <a class="post-tag" href="/tags/linux/">Linux</a>
     
       
       <a class="post-tag" href="/tags/tips/">Tips</a>
