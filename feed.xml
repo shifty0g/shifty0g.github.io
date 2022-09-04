@@ -4,7 +4,7 @@
   <id>/</id>
   <title>@shifty0g</title>
   <subtitle></subtitle>
-  <updated>2022-07-16T18:25:41+01:00</updated>
+  <updated>2022-09-04T12:02:42+01:00</updated>
   <author>
     <name></name>
     <uri>/</uri>
@@ -52,13 +52,11 @@
 
 I will try and limit this list to the best of the best. Everything else check out My Github Stars List there is loads on there
 
-&amp;lt;/br&amp;gt;
-
 Windows
 
 
   
-    Mobaxterm - This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can ...
+    Mobaxterm - This is great for managing logo sessions to boxes when you are on a job.  This has a nice SSH Tunnel tool. Also can spin up a num...
     </summary>
   
 
@@ -94,7 +92,9 @@ Windows
 
       As with all posts this will be a growing WIP as and when.
 
-You should learn hotkeys for the stuff you use day to day using a mouse is slow and even worse on a laptop touch pads are painful.  Here are some resources for hotkeys.
+You should learn hotkeys for the stuff you use day to day using a mouse is slow and even worse on a laptop touch pads. Using these can improve your workflow
+
+Here are some resources for hotkey and ones i use.
 
 Windows
 
@@ -104,12 +104,9 @@ Kali
 
 Creating Custom Kali Hotkeys
 
+Terminal
 
-	Hotkeys
-
-```
-New Termianl  Window		CTRL + ALT + T      
-New Tab                     CTRL + SH...
+Knowing a few key hotkeys can make using the ...
     </summary>
   
 
